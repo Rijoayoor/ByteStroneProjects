@@ -1,0 +1,5 @@
+anandhu,24,deve,25600
+denit,25,dev,25000
+rijo,30,deve,21000
+kevin,25,dev,25000
+nevin,25,dev,25000
