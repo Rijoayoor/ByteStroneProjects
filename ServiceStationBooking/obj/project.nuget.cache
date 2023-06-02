@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TB2O+fyzsoomP9Jd+HAYfqkxCTmemvkDgi5aM/ksE4GI3b+2+IaBN+5Wk0OK0UEQFi0Zsp6DM9g9pqZ/wAbf2Q==",
+  "dgSpecHash": "kYJbnNQ8wnkuyoZNLyvetThr2v7PVZ0ZyEwIzBp49UtmC7SD5Z7x0CzAfetuXVUGdpTcjURJmqewxaDdGNom/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\RijoThomas(Intern)\\workspace\\ServiceStation\\ServiceStation.csproj",
+  "projectFilePath": "C:\\Users\\RijoThomas(Intern)\\workspace\\assessment\\rijo-thomas\\ServiceStationBooking\\ServiceStation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\RijoThomas(Intern)\\.nuget\\packages\\fastendpoints\\5.11.0\\fastendpoints.5.11.0.nupkg.sha512",
     "C:\\Users\\RijoThomas(Intern)\\.nuget\\packages\\fastendpoints.attributes\\5.11.0\\fastendpoints.attributes.5.11.0.nupkg.sha512",

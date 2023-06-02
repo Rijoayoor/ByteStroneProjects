@@ -19,6 +19,8 @@ public partial class ServiceContext : DbContext
 
     public virtual DbSet<Customer> Customers { get; set; }
 
+    public virtual DbSet<Login> Logins { get; set; }
+
     public virtual DbSet<Service> Services { get; set; }
 
     public virtual DbSet<ServiceExecutive> ServiceExecutives { get; set; }
@@ -95,12 +97,36 @@ public partial class ServiceContext : DbContext
             entity.Property(e => e.Email)
                 .HasMaxLength(30)
                 .HasColumnName("email");
+            entity.Property(e => e.ServiceRequirements)
+                .HasMaxLength(50)
+                .HasColumnName("service_requirements");
             entity.Property(e => e.VehicleModel)
                 .HasMaxLength(20)
                 .HasColumnName("vehicle_model");
             entity.Property(e => e.VehicleNumber)
                 .HasMaxLength(20)
                 .HasColumnName("vehicle_number");
+        });
+
+        modelBuilder.Entity<Login>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("login_pkey");
+
+            entity.ToTable("login");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Name)
+                .HasMaxLength(20)
+                .HasColumnName("name");
+            entity.Property(e => e.Password)
+                .HasMaxLength(20)
+                .HasColumnName("password");
+            entity.Property(e => e.Username)
+                .HasMaxLength(20)
+                .HasColumnName("username");
+            entity.Property(e => e.Userrole)
+                .HasMaxLength(20)
+                .HasColumnName("userrole");
         });
 
         modelBuilder.Entity<Service>(entity =>

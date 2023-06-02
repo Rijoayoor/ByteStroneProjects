@@ -8,11 +8,40 @@
     ".NETCoreApp,Version=v7.0": {
       "ServiceStation/1.0.0": {
         "dependencies": {
+          "FastEndpoints": "5.11.0",
           "Microsoft.EntityFrameworkCore.Design": "7.0.5",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.4"
         },
         "runtime": {
           "ServiceStation.dll": {}
+        }
+      },
+      "FastEndpoints/5.11.0": {
+        "dependencies": {
+          "FastEndpoints.Attributes": "5.11.0",
+          "FluentValidation": "11.5.2"
+        },
+        "runtime": {
+          "lib/net7.0/FastEndpoints.dll": {
+            "assemblyVersion": "5.11.0.0",
+            "fileVersion": "5.11.0.0"
+          }
+        }
+      },
+      "FastEndpoints.Attributes/5.11.0": {
+        "runtime": {
+          "lib/netstandard2.0/FastEndpoints.Attributes.dll": {
+            "assemblyVersion": "5.11.0.0",
+            "fileVersion": "5.11.0.0"
+          }
+        }
+      },
+      "FluentValidation/11.5.2": {
+        "runtime": {
+          "lib/net7.0/FluentValidation.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.5.2.0"
+          }
         }
       },
       "Humanizer.Core/2.14.1": {
@@ -183,6 +212,27 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "FastEndpoints/5.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qxrZuQvi2dQBIOkJ2lU3R8SrB2M/MtQh3mv4XMAAQp5dswjHtm/mZnL4EJUP8p1vKWvcQNECOr4zBmAUNGEmIQ==",
+      "path": "fastendpoints/5.11.0",
+      "hashPath": "fastendpoints.5.11.0.nupkg.sha512"
+    },
+    "FastEndpoints.Attributes/5.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jQ1+fV4tgTDzuZC1MBjpoCExlJAfGXPRYy1qNUP27YBE8Qi5lFXEZ4XD6vTc7uJ3OsKj4sysqvGspT8Lnc/eFA==",
+      "path": "fastendpoints.attributes/5.11.0",
+      "hashPath": "fastendpoints.attributes.5.11.0.nupkg.sha512"
+    },
+    "FluentValidation/11.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kj/hW/iusp2zq1Vt1YPLgDj6UG0DhoJXGkLwjLwm3j7vUtRF8DVA5vHJfItG3BxDjLWJUR2pvw8fK7rnuysZNA==",
+      "path": "fluentvalidation/11.5.2",
+      "hashPath": "fluentvalidation.11.5.2.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",
