@@ -10,6 +10,4 @@ public partial class ServiceTechnician
     public string? TechnicianName { get; set; }
 
     public string? ContactNumber { get; set; }
-
-    public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 }

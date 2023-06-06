@@ -44,18 +44,14 @@ public partial class ServiceContext : DbContext
             entity.Property(e => e.CustomerId)
                 .ValueGeneratedOnAdd()
                 .HasColumnName("customer_id");
-            entity.Property(e => e.ExecutiveId)
-                .ValueGeneratedOnAdd()
-                .HasColumnName("executive_id");
+            entity.Property(e => e.ExecutiveId).HasColumnName("executive_id");
             entity.Property(e => e.ServiceId)
                 .ValueGeneratedOnAdd()
                 .HasColumnName("service_id");
             entity.Property(e => e.Status)
                 .HasMaxLength(20)
+                .HasDefaultValueSql("'new'::character varying")
                 .HasColumnName("status");
-            entity.Property(e => e.TechnicianId)
-                .ValueGeneratedOnAdd()
-                .HasColumnName("technician_id");
 
             entity.HasOne(d => d.Customer).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.CustomerId)
@@ -64,18 +60,12 @@ public partial class ServiceContext : DbContext
 
             entity.HasOne(d => d.Executive).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.ExecutiveId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("booking_executive_id_fkey");
+                .HasConstraintName("fk_booking_service_executive");
 
             entity.HasOne(d => d.Service).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.ServiceId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("booking_service_id_fkey");
-
-            entity.HasOne(d => d.Technician).WithMany(p => p.Bookings)
-                .HasForeignKey(d => d.TechnicianId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("booking_technician_id_fkey");
         });
 
         modelBuilder.Entity<Customer>(entity =>
@@ -137,7 +127,7 @@ public partial class ServiceContext : DbContext
 
             entity.Property(e => e.ServiceId).HasColumnName("service_id");
             entity.Property(e => e.Description)
-                .HasMaxLength(50)
+                .HasMaxLength(250)
                 .HasColumnName("description");
             entity.Property(e => e.Price)
                 .HasMaxLength(20)

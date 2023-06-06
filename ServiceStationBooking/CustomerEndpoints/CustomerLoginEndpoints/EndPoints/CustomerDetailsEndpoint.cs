@@ -1,7 +1,7 @@
 using FastEndpoints;
 using FluentValidation;
 using Model;
-public class CustomerBookingEnpoint : Endpoint<Customer, int>
+public class CustomerDetailsEnpoint : Endpoint<Customer>
 {
     private readonly ServiceContext _context;
 
@@ -11,7 +11,7 @@ public class CustomerBookingEnpoint : Endpoint<Customer, int>
         AllowAnonymous();
 
     }
-    public CustomerBookingEnpoint(ServiceContext context)
+    public CustomerDetailsEnpoint(ServiceContext context)
     {
         _context = context;
     }
@@ -23,11 +23,12 @@ public class CustomerBookingEnpoint : Endpoint<Customer, int>
 
         await _context.SaveChangesAsync();
 
-        await SendAsync(customer.CustomerId);
+
+
+        await SendAsync(customer);
+
     }
 }
-
-
 
 public class CustomerValidator : Validator<Customer>
 {
@@ -36,14 +37,12 @@ public class CustomerValidator : Validator<Customer>
         RuleFor(x => x.CustomerName)
             .NotEmpty()
             .WithMessage("Your name is required!");
-        // .MinimumLength(5)
-        // .WithMessage("your name is too short!");
+
 
         RuleFor(x => x.ContactNumber)
             .NotEmpty()
             .WithMessage("Contact number is required!");
-        // .GreaterThan(18)
-        // .WithMessage("you are not legal yet!");
+
 
         RuleFor(x => x.VehicleNumber)
             .NotEmpty()

@@ -3,7 +3,7 @@ using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Model;
 
-public class CustomerUpdateEnpoint : Endpoint<Customer, Customer>
+public class CustomerUpdateEnpoint : Endpoint<Customer>
 {
     private readonly ServiceContext _context;
     public override void Configure()
