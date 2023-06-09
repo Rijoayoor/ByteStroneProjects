@@ -37,6 +37,10 @@ export class CustomerhomeComponent {
       console.log(customer)
       this.service.customerDetails(customer).subscribe(res => {
         console.log(res)
+        console.log(res.customerId);
+        this.service.customerIdSetter(res.customerId);
+        // localStorage.setItem("cid",res.customerId.toString())
+        
       })
     };
    

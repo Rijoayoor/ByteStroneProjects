@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { CustomerDetails } from './model/customer-details';
 import { Customer } from './model/customer';
+import { Booking } from './model/booking';
+import { Bookingdetails } from './model/bookingdetails';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +14,7 @@ export class ApiService {
 
   name = ""
   role = ""
+  customerId!:number
 
   constructor(private Http: HttpClient) { }
 
@@ -35,5 +38,18 @@ export class ApiService {
     return this.Http.post<CustomerDetails>("http://localhost:5087/api/customer",customerDetails)
 
   }
+  Bookingdetails(Bookingdetails:Booking){
+    return this.Http.post<Bookingdetails>("http://localhost:5087/api/booking",Bookingdetails)
+
+
+  }
+  customerIdSetter(id:number){
+    this.customerId=id
+  }
+  customerIdGetter(){
+    return this.customerId
+  }
+
+
 
 }

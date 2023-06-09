@@ -1,7 +1,7 @@
 .nav{
     width: 100vw;
     height: 15vh;
-    background-color:black;
+    background-color:rgb(79, 144, 105);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,7 +40,7 @@ font-weight: 600;
 .side-nav{
     width: 20vw;
     height: 83vh;
-    background-color: black;
+    background-color: rgb(112, 187, 127);
     border-top: 10px solid white;
     display: flex;
     flex-direction: column;

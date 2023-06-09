@@ -19,7 +19,7 @@ public class GetBookingEndpoint : EndpointWithoutRequest<dynamic[]>
     public override async Task HandleAsync(CancellationToken ct)
     {
         var id = Route<int>("id");
-        // var executive = _context.Bookings.Where(s => s.ExecutiveId == id).FirstOrDefault();
+       
         var executive = _context.Customers.Where(c => c.Bookings.Any(b => b.ExecutiveId == id))
         .Select(c => new { c.CustomerName, c.ContactNumber, c.ServiceRequirements })
         .ToArray();

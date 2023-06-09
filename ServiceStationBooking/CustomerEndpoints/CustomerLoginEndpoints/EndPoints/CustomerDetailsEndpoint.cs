@@ -20,11 +20,7 @@ public class CustomerDetailsEnpoint : Endpoint<Customer>
     {
 
         _context.Customers.Add(customer);
-
         await _context.SaveChangesAsync();
-
-
-
         await SendAsync(customer);
 
     }

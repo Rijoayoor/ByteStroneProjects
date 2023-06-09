@@ -25,6 +25,10 @@ export class CustomerComponent {
   {
     this.route.navigateByUrl("/customerhome")
   }
+  bookingdetails()
+  {
+    this.route.navigateByUrl("/customerbooking")
+  }
   
 
 
