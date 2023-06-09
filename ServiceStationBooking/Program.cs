@@ -8,7 +8,6 @@ builder.Services.AddFastEndpoints();
 builder.Services.AddDbContext<ServiceContext>();
 
 
-
 builder.Services.AddCors(options =>
 
 {
@@ -40,3 +39,5 @@ app.UseAuthorization();
 app.UseFastEndpoints();
 
 app.Run();
+
+

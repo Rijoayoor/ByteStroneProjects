@@ -25,7 +25,8 @@
     }
 
     .container input[type="text"],
-    .container input[type="password"] {
+    .container input[type="password"],
+    .container select {
       width: 100%;
       padding: 10px;
       margin-top: 10px;
@@ -50,9 +51,15 @@
   <div class="container">
     <h2>Login</h2>
     <form>
-      <input type="text" placeholder="Username"  name="Username" [(ngModel)]="Username">
+      <input type="text" placeholder="Username" name="Username" [(ngModel)]="Username">
       <input type="password" placeholder="Password" name="Password" [(ngModel)]="Password">
-      <input type="text" placeholder="Userrole" name="Userrole"  [(ngModel)]="Userrole">
+      <!-- <input type="text" placeholder="Userrole" name="Userrole"  [(ngModel)]="Userrole"> -->
+
+      <select name="Userrole" class="dropdown" [(ngModel)]="Userrole">
+        <option value="customer">Customer</option>
+        <option value="executive">Executive</option>
+        <option value="technician">Technician</option>
+      </select>
       <button (click)="Login()">Login</button>
     </form>
   </div>

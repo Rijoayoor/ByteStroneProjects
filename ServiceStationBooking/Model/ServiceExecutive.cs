@@ -11,5 +11,7 @@ public partial class ServiceExecutive
 
     public string? ContactNumber { get; set; }
 
+    public int? Count { get; set; }
+
     public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 }

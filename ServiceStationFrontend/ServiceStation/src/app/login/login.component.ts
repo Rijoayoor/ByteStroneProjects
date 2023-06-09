@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
+import { compileNgModule } from '@angular/compiler';
 
 @Component({
   selector: 'app-login',
@@ -8,36 +10,36 @@ import { ApiService } from '../api.service';
 })
 export class LoginComponent {
 
-  Username:string|any
-  Password:string|any
-  Userrole:string|any
-  details:string|any
+  Username: string | any
+  Password: string | any
+  Userrole: string | any
+  details: string | any
+  data: any
+  name: string = ""
+  role: string = ""
 
 
-  constructor(private service:ApiService){ }
+  constructor(private service: ApiService, private route: Router) { }
 
- 
+
 
   Login() {
 
-    this.service.login(this.Username, this.Password,this.Userrole).subscribe(
+    this.service.login(this.Username, this.Password, this.Userrole).subscribe(res => {
+      console.log(this.Username, this.Password, this.Userrole)
+      this.data = res
+      console.log(this.data)
+      this.name = this.data.name
+      this.role = this.data.userrole
+      this.service.nameSetter(this.name);
+      this.service.roleSetter(this.role);
+      console.log(this.data.role)
+      this.route.navigate([this.data.userrole])
 
-     
 
-        (response) => {
 
-          // Handle successful login response
 
-          console.log( response);
 
-          this.details=response},
-          (error) => {
-
-            // Handle login error
-  
-            console.error('Loggin error', error);
-  
-            alert("invalid credentials")
-  
-          })
-}}
+    })
+  }
+}

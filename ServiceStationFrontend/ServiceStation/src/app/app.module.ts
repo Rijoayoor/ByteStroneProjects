@@ -6,7 +6,12 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { CustomerBookingComponent } from './customer-booking/customer-booking.component';
+import { CustomerComponent } from './component/customer/customer.component';
+import { ExecutiveComponent } from './component/executive/executive.component';
+import { TechnicianComponent } from './component/technician/technician.component';
+import { NavComponent } from './component/nav/nav.component';
+import { CustomerhomeComponent } from './component/customerhome/customerhome.component';
+import { CustomerbookingComponent } from './component/customerbooking/customerbooking.component';
 
 
 
@@ -14,7 +19,12 @@ import { CustomerBookingComponent } from './customer-booking/customer-booking.co
   declarations: [
     AppComponent,
     LoginComponent,
-    CustomerBookingComponent
+    CustomerComponent,
+    ExecutiveComponent,
+    TechnicianComponent,
+    NavComponent,
+    CustomerhomeComponent,
+    CustomerbookingComponent
   ],
   imports: [
     BrowserModule,

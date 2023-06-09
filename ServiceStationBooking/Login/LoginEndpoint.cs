@@ -34,7 +34,7 @@ public class LoginEndpoint : Endpoint<Login>
             // await SendAsync("Login successful");
             // await SendAsync(log.Username);
             // await SendAsync(log.Name);
-            await SendAsync(log);
+            await SendAsync(user);
         }
         else
         {

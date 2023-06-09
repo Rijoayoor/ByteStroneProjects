@@ -147,6 +147,9 @@ public partial class ServiceContext : DbContext
             entity.Property(e => e.ContactNumber)
                 .HasMaxLength(20)
                 .HasColumnName("contact_number");
+            entity.Property(e => e.Count)
+                .HasDefaultValueSql("0")
+                .HasColumnName("count");
             entity.Property(e => e.ExecutiveName)
                 .HasMaxLength(20)
                 .HasColumnName("executive_name");

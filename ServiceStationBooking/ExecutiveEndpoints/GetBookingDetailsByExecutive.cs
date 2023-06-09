@@ -2,7 +2,7 @@ using FastEndpoints;
 using Microsoft.EntityFrameworkCore;
 using Model;
 
-public class GetBookingEndpoint : EndpointWithoutRequest<Booking>
+public class GetBookingEndpoint : EndpointWithoutRequest<dynamic[]>
 {
     private readonly ServiceContext _context;
     public override void Configure()
@@ -19,13 +19,10 @@ public class GetBookingEndpoint : EndpointWithoutRequest<Booking>
     public override async Task HandleAsync(CancellationToken ct)
     {
         var id = Route<int>("id");
-
-        var executive = _context.Bookings.Where(s => s.ExecutiveId == id).FirstOrDefault();
-
-        //  var executive = _context.Bookings.Where(s => s.ExecutiveId == id).ToList();
-
-
-
+        // var executive = _context.Bookings.Where(s => s.ExecutiveId == id).FirstOrDefault();
+        var executive = _context.Customers.Where(c => c.Bookings.Any(b => b.ExecutiveId == id))
+        .Select(c => new { c.CustomerName, c.ContactNumber, c.ServiceRequirements })
+        .ToArray();
 
 
         if (executive == null)
@@ -33,7 +30,6 @@ public class GetBookingEndpoint : EndpointWithoutRequest<Booking>
         else
             await SendAsync(executive);
 
-        // await _context.WriteJsonAsync(executive);
     }
 
 
