@@ -255,8 +255,9 @@ form {
     font-weight: bold;
   }
   
-  input[type="text"],
-  input[type="email"] {
+  input[type="number"],
+  input[type="email"], 
+  input[type="date"] {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -282,4 +283,7 @@ form {
     align-items: center;
     width: 100vw;
     height: 80vh;
+  }
+  input:required:invalid {
+    border-color: red;
   }

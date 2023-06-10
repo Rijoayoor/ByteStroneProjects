@@ -5,6 +5,7 @@ import { CustomerDetails } from './model/customer-details';
 import { Customer } from './model/customer';
 import { Booking } from './model/booking';
 import { Bookingdetails } from './model/bookingdetails';
+import { Executivebooking } from './model/executivebooking';
 
 @Injectable({
   providedIn: 'root'
@@ -48,6 +49,9 @@ export class ApiService {
   }
   customerIdGetter(){
     return this.customerId
+  }
+  viewbookingexecutive(){
+    return this.Http.get<Executivebooking>(`http://localhost:5087/api/executive/${this.customerId}`)
   }
 
 

@@ -21,7 +21,7 @@ public class GetBookingEndpoint : EndpointWithoutRequest<dynamic[]>
         var id = Route<int>("id");
        
         var executive = _context.Customers.Where(c => c.Bookings.Any(b => b.ExecutiveId == id))
-        .Select(c => new { c.CustomerName, c.ContactNumber, c.ServiceRequirements })
+        .Select(c => new {c.CustomerId, c.CustomerName, c.ContactNumber, c.ServiceRequirements })
         .ToArray();
 
 

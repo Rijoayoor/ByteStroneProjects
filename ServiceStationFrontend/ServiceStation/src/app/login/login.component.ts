@@ -33,6 +33,7 @@ export class LoginComponent {
       this.role = this.data.userrole
       this.service.nameSetter(this.name);
       this.service.roleSetter(this.role);
+      this.service.customerIdSetter(this.data.id)
       console.log(this.data.role)
       this.route.navigate([this.data.userrole])
 

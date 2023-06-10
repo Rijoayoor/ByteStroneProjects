@@ -10,4 +10,6 @@ public partial class ServiceTechnician
     public string? TechnicianName { get; set; }
 
     public string? ContactNumber { get; set; }
+
+    public int? BookingId { get; set; }
 }

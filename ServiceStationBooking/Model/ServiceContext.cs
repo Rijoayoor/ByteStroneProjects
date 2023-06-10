@@ -111,6 +111,7 @@ public partial class ServiceContext : DbContext
             entity.Property(e => e.Password)
                 .HasMaxLength(20)
                 .HasColumnName("password");
+            entity.Property(e => e.RoleId).HasColumnName("role_id");
             entity.Property(e => e.Username)
                 .HasMaxLength(20)
                 .HasColumnName("username");
@@ -162,6 +163,9 @@ public partial class ServiceContext : DbContext
             entity.ToTable("service_technician");
 
             entity.Property(e => e.TechnicianId).HasColumnName("technician_id");
+            entity.Property(e => e.BookingId)
+                .HasDefaultValueSql("0")
+                .HasColumnName("booking_id");
             entity.Property(e => e.ContactNumber)
                 .HasMaxLength(20)
                 .HasColumnName("contact_number");

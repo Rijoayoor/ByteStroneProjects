@@ -3,19 +3,18 @@
     <button class="log-out" (click)="logout()">Logout</button>
 </div>
 <div class="main">
-    
+
     <div class="side-nav">
         <button (click)="customerdetails()">Customer Details</button>
         <button (click)="bookingdetails()">Book Service</button>
-        
-       
+
+
+    </div>
+    <div class="content" *ngIf="custumerOns">
+        <app-customerhome></app-customerhome>
     </div>
     
-
-   
-    <div class="content">
-      
-      
-
+    <div class="content" *ngIf="bookingFormsOns">
+        <app-customerbooking></app-customerbooking>
     </div>
 </div>

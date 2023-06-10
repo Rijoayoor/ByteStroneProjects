@@ -18,12 +18,12 @@ export class CustomerhomeComponent {
   vehicleNumber!: string
   vehicleModel!: string
   serviceRequirements!: string
+  
+ 
   constructor(private service: ApiService, private route: Router) { }
 
-  
-
-
   submitForm(form: NgForm) {
+
     if (form.valid) {
       let customer: Customer = new Customer();
 
@@ -40,14 +40,14 @@ export class CustomerhomeComponent {
         console.log(res.customerId);
         this.service.customerIdSetter(res.customerId);
         // localStorage.setItem("cid",res.customerId.toString())
-        
+        alert("Customer Details Added!")
+
       })
-    };
-   
-    this.route.navigateByUrl("/customer")
-    
+      this.route.navigateByUrl("/customer")
+
+    }
+    else {
+      alert("Please fill the required fields!")
+    }
   }
-  
-
-
 }

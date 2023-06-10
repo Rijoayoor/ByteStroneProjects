@@ -1,7 +1,7 @@
 <form #customerForm="ngForm" (ngSubmit)="submitForm(customerForm)">
     <div>
       <label for="serviceId">Service Id</label>
-      <input type="text" id="serviceId" name="serviceId" [(ngModel)]="serviceId" required>
+      <input type="number" id="serviceId" name="serviceId" [(ngModel)]="serviceId" required>
     </div>
     <div>
       <label for="bookingDate">Booking Date</label>

@@ -12,6 +12,7 @@ import { TechnicianComponent } from './component/technician/technician.component
 import { NavComponent } from './component/nav/nav.component';
 import { CustomerhomeComponent } from './component/customerhome/customerhome.component';
 import { CustomerbookingComponent } from './component/customerbooking/customerbooking.component';
+import { ExecutiveviewbookingComponent } from './component/executiveviewbooking/executiveviewbooking.component';
 
 
 
@@ -24,7 +25,8 @@ import { CustomerbookingComponent } from './component/customerbooking/customerbo
     TechnicianComponent,
     NavComponent,
     CustomerhomeComponent,
-    CustomerbookingComponent
+    CustomerbookingComponent,
+    ExecutiveviewbookingComponent
   ],
   imports: [
     BrowserModule,

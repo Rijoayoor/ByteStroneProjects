@@ -17,5 +17,10 @@ export class ExecutiveComponent {
   logout() {
     this.route.navigateByUrl("/login")
   }
+  bookingstatus()
+  {
+    this.route.navigateByUrl("/executiveviewbooking")
+  }
+
 
 }

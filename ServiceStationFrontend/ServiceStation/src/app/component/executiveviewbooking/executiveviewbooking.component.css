@@ -1,0 +1,75 @@
+/* Add some padding to the table */
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    padding: 10px;
+
+  }
+
+ 
+
+  /* Style the table header */
+
+  thead {
+
+    background-color: #f0f0f0;
+
+  }
+
+ 
+
+  thead th {
+
+    padding: 10px;
+
+    font-weight: bold;
+
+    text-align: left;
+
+  }
+
+ 
+
+  /* Alternate row background color for better readability */
+
+  tbody tr:nth-child(even) {
+
+    background-color: #f9f9f9;
+
+  }
+
+ 
+
+  /* Style the table cells */
+
+  td {
+
+    padding: 10px;
+
+    border: 1px solid #ccc;
+
+  }
+
+ 
+
+  /* Highlight the table cells on hover */
+
+  tbody tr:hover {
+
+    background-color: #eaf5ff;
+
+  }
+
+ 
+
+  /* Add some spacing between the table cells */
+
+  td {
+
+    padding: 10px;
+
+  }
