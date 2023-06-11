@@ -9,12 +9,19 @@ import { ApiService } from 'src/app/api.service';
 export class ExecutiveviewbookingComponent {
   data:any
 
+  // booking.customerId=this.service.customerIdGetter()
+  roleId=this.service.roleIdGetter()
+
   constructor(private service: ApiService) { }
 
   ngOnInit() {
-this.service.viewbookingexecutive().subscribe(res=>{
+this.service.viewbookingexecutive(this.roleId).subscribe(res=>{
   this.data=res
   console.log(this.data);
+  console.log(this.roleId);
+  
+  
+  
   
 })
   }

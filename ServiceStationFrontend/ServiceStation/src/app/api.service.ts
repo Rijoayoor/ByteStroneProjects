@@ -16,6 +16,7 @@ export class ApiService {
   name = ""
   role = ""
   customerId!:number
+  roleId!:number
 
   constructor(private Http: HttpClient) { }
 
@@ -50,8 +51,16 @@ export class ApiService {
   customerIdGetter(){
     return this.customerId
   }
-  viewbookingexecutive(){
-    return this.Http.get<Executivebooking>(`http://localhost:5087/api/executive/${this.customerId}`)
+  roleIdSetter(roleId:number)
+  {
+    this.roleId=roleId
+  }
+  roleIdGetter(){
+    return this.roleId
+  }
+
+  viewbookingexecutive(roleId:number){
+    return this.Http.get<Executivebooking>(`http://localhost:5087/api/executive/${roleId}`)
   }
 
 
