@@ -17,7 +17,7 @@ export class LoginComponent {
   data: any
   name: string = ""
   role: string = ""
-  roleId!:number
+  roleId!: number
 
 
   constructor(private service: ApiService, private route: Router) { }
@@ -32,13 +32,14 @@ export class LoginComponent {
       console.log(this.data)
       this.name = this.data.name
       this.role = this.data.userrole
-      this.roleId=this.data.roleId
+      this.roleId = this.data.roleId
       this.service.nameSetter(this.name);
       this.service.roleSetter(this.role);
       this.service.customerIdSetter(this.data.id)
       this.service.roleIdSetter(this.data.roleId)
       console.log(this.data.roleId)
       this.route.navigate([this.data.userrole])
+      alert("Login successfull!")
 
     })
   }

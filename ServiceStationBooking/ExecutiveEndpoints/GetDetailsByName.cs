@@ -10,16 +10,13 @@ public class GetDetailsByNameEndpoint : EndpointWithoutRequest<dynamic[]>
         Get("/api/details/{name}");
         AllowAnonymous();
     }
-
     public GetDetailsByNameEndpoint(ServiceContext context)
     {
         _context = context;
     }
-
     public override async Task HandleAsync(CancellationToken ct)
     {
         var name = Route<string>("name");
-
         var result = (from booking in _context.Bookings
                       join customer in _context.Customers
                       on booking.CustomerId equals customer.CustomerId
@@ -32,19 +29,11 @@ public class GetDetailsByNameEndpoint : EndpointWithoutRequest<dynamic[]>
                           booking.ServiceId,
                           customer.CustomerName
                       }).ToArray();
-
-
         if (result == null)
             await SendNotFoundAsync();
         else
         {
-
             await SendAsync(result);
         }
-
-
-
     }
-
-
 }

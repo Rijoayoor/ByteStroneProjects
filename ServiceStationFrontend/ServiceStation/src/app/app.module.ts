@@ -13,6 +13,7 @@ import { NavComponent } from './component/nav/nav.component';
 import { CustomerhomeComponent } from './component/customerhome/customerhome.component';
 import { CustomerbookingComponent } from './component/customerbooking/customerbooking.component';
 import { ExecutiveviewbookingComponent } from './component/executiveviewbooking/executiveviewbooking.component';
+import { ExecutivechangestatusComponent } from './component/executivechangestatus/executivechangestatus.component';
 
 
 
@@ -26,7 +27,8 @@ import { ExecutiveviewbookingComponent } from './component/executiveviewbooking/
     NavComponent,
     CustomerhomeComponent,
     CustomerbookingComponent,
-    ExecutiveviewbookingComponent
+    ExecutiveviewbookingComponent,
+    ExecutivechangestatusComponent
   ],
   imports: [
     BrowserModule,

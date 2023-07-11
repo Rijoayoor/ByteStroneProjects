@@ -62,6 +62,9 @@ export class ApiService {
   viewbookingexecutive(roleId:number){
     return this.Http.get<Executivebooking>(`http://localhost:5087/api/executive/${roleId}`)
   }
+  changestatusexecutive(roleId:number){
+    return this.Http.get<Executivebooking>(`http://localhost:5087/api/executive/${roleId}`)
+  }
 
 
 

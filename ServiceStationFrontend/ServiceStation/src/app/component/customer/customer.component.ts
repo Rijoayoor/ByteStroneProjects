@@ -12,6 +12,7 @@ import { flush } from '@angular/core/testing';
 })
 export class CustomerComponent {
   name = ""
+  role= ""
   custumerOns = false
   bookingFormsOns = false
 
@@ -19,6 +20,8 @@ export class CustomerComponent {
   constructor(private service: ApiService, private route: Router) { }
   ngOnInit() {
     this.name = this.service.nameGetter()
+    this.role=this.service.roleGetter()
+
   }
   logout() {
     this.route.navigateByUrl("/login")

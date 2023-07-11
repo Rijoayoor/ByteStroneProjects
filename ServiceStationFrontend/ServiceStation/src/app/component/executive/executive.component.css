@@ -62,3 +62,18 @@ font-weight: 600;
     height: 11%;
 
 }
+
+.main {
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+    align-items: end
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 80vh;
+    /* background-color: brown; */
+  }

@@ -1,17 +1,20 @@
 <div class="nav">
     <h1 class="brand">Hi, {{name}}</h1>
+    <h1 class="brand"> {{role}}</h1>
     <button class="log-out" (click)="logout()">Logout</button>
 </div>
 <div class="main">
     <div class="side-nav">
         <button (click)="bookingstatus()">VIEW BOOKINGS</button>
-        <button>CHANGE STATUS</button>
+        <button (click)="changestatus()">CHANGE STATUS</button>
         <button>SEARCH</button>
         <button>ASSIGN JOB</button>
     </div>
-    <div class="content">
-
-
-
+    <div class="content" *ngIf="viewBookingOn">
+        <app-executiveviewbooking></app-executiveviewbooking>
     </div>
+    <div class="content" *ngIf="changeStatus">
+       <app-executivechangestatus></app-executivechangestatus>
+    </div>
+
 </div>

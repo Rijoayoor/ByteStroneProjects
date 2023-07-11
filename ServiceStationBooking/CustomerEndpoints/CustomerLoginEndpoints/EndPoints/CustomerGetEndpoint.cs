@@ -9,12 +9,10 @@ public class CustomerGetEndpoint : EndpointWithoutRequest<Customer[]>
         Get("/api/customers");
         AllowAnonymous();
     }
-
     public CustomerGetEndpoint(ServiceContext context)
     {
         _context = context;
     }
-
     public override async Task HandleAsync(CancellationToken ct)
     {
         await SendAsync(_context.Customers.ToArray());

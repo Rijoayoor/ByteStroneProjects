@@ -7,6 +7,7 @@ import { TechnicianComponent } from './component/technician/technician.component
 import { CustomerhomeComponent } from './component/customerhome/customerhome.component';
 import { CustomerbookingComponent } from './component/customerbooking/customerbooking.component';
 import { ExecutiveviewbookingComponent } from './component/executiveviewbooking/executiveviewbooking.component';
+import { ExecutivechangestatusComponent } from './component/executivechangestatus/executivechangestatus.component';
 
 const routes: Routes = [
   {path:"login",component:LoginComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:"",component:LoginComponent},
   {path:"customerhome",component:CustomerhomeComponent},
   {path:"customerbooking",component:CustomerbookingComponent},
-  {path:"executiveviewbooking",component:ExecutiveviewbookingComponent}
+  {path:"executiveviewbooking",component:ExecutiveviewbookingComponent},
+  {path:"executivechangestatus",component:ExecutivechangestatusComponent}
 
 ];
 

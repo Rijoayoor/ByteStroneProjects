@@ -1096,11 +1096,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\RijoThomas(Intern)\\workspace\\assessment\\rijo-thomas\\ServiceStationBooking\\ServiceStation.csproj",
+      "projectUniqueName": "C:\\Users\\RijoThomas(Intern)\\workspace\\FinalAssessment\\rijo-thomas\\ServiceStationBooking\\ServiceStation.csproj",
       "projectName": "ServiceStation",
-      "projectPath": "C:\\Users\\RijoThomas(Intern)\\workspace\\assessment\\rijo-thomas\\ServiceStationBooking\\ServiceStation.csproj",
+      "projectPath": "C:\\Users\\RijoThomas(Intern)\\workspace\\FinalAssessment\\rijo-thomas\\ServiceStationBooking\\ServiceStation.csproj",
       "packagesPath": "C:\\Users\\RijoThomas(Intern)\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\RijoThomas(Intern)\\workspace\\assessment\\rijo-thomas\\ServiceStationBooking\\obj\\",
+      "outputPath": "C:\\Users\\RijoThomas(Intern)\\workspace\\FinalAssessment\\rijo-thomas\\ServiceStationBooking\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\RijoThomas(Intern)\\AppData\\Roaming\\NuGet\\NuGet.Config"

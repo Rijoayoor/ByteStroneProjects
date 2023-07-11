@@ -9,17 +9,32 @@ import { ApiService } from 'src/app/api.service';
 })
 export class ExecutiveComponent {
   name = ""
+  role = ""
+  viewBookingOn = false
+  changeStatus = false
   constructor(private service: ApiService, private route: Router) { }
   ngOnInit() {
     this.name = this.service.nameGetter()
+    this.role = this.service.roleGetter()
   }
 
   logout() {
     this.route.navigateByUrl("/login")
   }
-  bookingstatus()
-  {
-    this.route.navigateByUrl("/executiveviewbooking")
+  bookingstatus() {
+    // this.route.navigateByUrl("/executiveviewbooking")
+    this.viewBookingOn = !this.viewBookingOn
+    if (this.changeStatus) {
+      this.changeStatus = !this.changeStatus
+    }
+
+  }
+  changestatus() {
+    // this.route.navigateByUrl("/executivechangestatus")
+    this.changeStatus = !this.changeStatus
+    if (this.viewBookingOn) {
+      this.viewBookingOn = !this.viewBookingOn
+    }
   }
 
 
