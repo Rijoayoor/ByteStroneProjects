@@ -7,7 +7,7 @@ public class GetDetailsByStatusEndpoint : EndpointWithoutRequest<dynamic[]>
     private readonly ServiceContext _context;
     public override void Configure()
     {
-        Get("/api/detailsstatus");
+        Get("/api/detailsstatus/{executiveId}");
         AllowAnonymous();
     }
     public GetDetailsByStatusEndpoint(ServiceContext context)
@@ -16,22 +16,33 @@ public class GetDetailsByStatusEndpoint : EndpointWithoutRequest<dynamic[]>
     }
     public override async Task HandleAsync(CancellationToken ct)
     {
-        // var status = Route<string>("status");
+        int executiveId = Route<int>("executiveId");
         var result = (from booking in _context.Bookings
                       join customer in _context.Customers
                       on booking.CustomerId equals customer.CustomerId
-                      where booking.Status == "new" || booking.Status == "In progress"
+                      where booking.ExecutiveId == executiveId
+                        && 
+                        (booking.Status == "new"
+                        || booking.Status == "In progress"
+                        || booking.Status == "completed"
+                        // || booking.Status == "Cancelled"
+                        )
                       select new
                       {
                           booking.BookingId,
                           booking.BookingDate,
                           booking.CustomerId,
-                          booking.ServiceId,
+                          customer.ContactNumber,
+                          customer.ServiceRequirements,
                           customer.CustomerName,
                           booking.Status
                       }).ToArray();
-        if (result == null)
+          var result1=result.FirstOrDefault();
+
+        if (result1 == null)
+        {
             await SendNotFoundAsync();
+        }
         else
         {
             await SendAsync(result);

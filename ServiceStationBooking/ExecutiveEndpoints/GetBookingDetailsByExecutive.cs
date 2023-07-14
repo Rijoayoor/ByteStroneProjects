@@ -17,17 +17,38 @@ public class GetBookingEndpoint : EndpointWithoutRequest<dynamic[]>
     public override async Task HandleAsync(CancellationToken ct)
     {
         var id = Route<int>("id");
-        var executive = _context.Customers
-        .Where(c => c.Bookings
-        .Any(b => b.ExecutiveId == id))
-        .Select(c => new {c.CustomerId, c.CustomerName, c.ContactNumber, c.ServiceRequirements })
-        .ToArray();
+        // var executive = _context.Customers
+        // .Where(c => c.Bookings
+        // .Any(b => b.ExecutiveId == id))
+        // .Select(c => new {c.CustomerId, c.CustomerName, c.ContactNumber, c.ServiceRequirements })
+        // .ToArray();
         // var executive=(from booking in _context.Bookings
         // join customer in _context.Customers
         // on booking.CustomerId)
-        if (executive == null)
+
+         var result = (from booking in _context.Bookings
+                      join customer in _context.Customers
+                      on booking.CustomerId equals customer.CustomerId
+                      where booking.ExecutiveId == id
+                        && 
+                        (booking.Status == "new"
+                        || booking.Status == "In progress"
+                        || booking.Status == "completed"
+                        || booking.Status == "Cancelled"
+                        )
+                      select new
+                      {
+                          booking.BookingId,
+                          booking.BookingDate,
+                          booking.CustomerId,
+                          customer.ContactNumber,
+                          customer.ServiceRequirements,
+                          customer.CustomerName,
+                          booking.Status
+                      }).ToArray();
+        if (result == null)
             await SendNotFoundAsync();
         else
-            await SendAsync(executive);
+            await SendAsync(result);
     }
 }

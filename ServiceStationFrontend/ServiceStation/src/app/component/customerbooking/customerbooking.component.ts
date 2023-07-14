@@ -17,6 +17,7 @@ export class CustomerbookingComponent {
   bookingDate!:Date
   customerId!:number
   bookingId!:number
+  bookingDateInput!:any
 
   result:Bookingdetails=new Bookingdetails();
 

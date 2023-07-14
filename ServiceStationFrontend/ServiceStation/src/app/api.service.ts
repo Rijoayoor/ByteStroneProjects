@@ -6,6 +6,7 @@ import { Customer } from './model/customer';
 import { Booking } from './model/booking';
 import { Bookingdetails } from './model/bookingdetails';
 import { Executivebooking } from './model/executivebooking';
+import { Executivestatuschange } from './model/executivestatuschange';
 
 @Injectable({
   providedIn: 'root'
@@ -63,9 +64,18 @@ export class ApiService {
     return this.Http.get<Executivebooking>(`http://localhost:5087/api/executive/${roleId}`)
   }
   changestatusexecutive(roleId:number){
-    return this.Http.get<Executivebooking>(`http://localhost:5087/api/executive/${roleId}`)
+    return this.Http.get<Executivestatuschange>(`http://localhost:5087/api/detailsstatus/${roleId}`)
+  }
+  updatestatus(roleId:number,customerId:number,e:Executivestatuschange){
+    return this.Http.put(`http://localhost:5087/api/executive/${roleId}/customer/${customerId}`,e)
+
   }
 
+
+  // Updated By Nevin
+  searchRequest(searchCriteria1:any,searchCriteria2:any,searchCriteria3:any,searchCriteria4:any,searchCriteria5:any){
+     return this.Http.get(`http://localhost:5087/api/details/name/${searchCriteria1}/date/${searchCriteria2}/email/${searchCriteria3}/vehiclemodel/${searchCriteria4}/requirement/${searchCriteria5}`)
+  }
 
 
 }

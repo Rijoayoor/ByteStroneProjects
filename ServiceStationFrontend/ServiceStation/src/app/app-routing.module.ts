@@ -8,6 +8,7 @@ import { CustomerhomeComponent } from './component/customerhome/customerhome.com
 import { CustomerbookingComponent } from './component/customerbooking/customerbooking.component';
 import { ExecutiveviewbookingComponent } from './component/executiveviewbooking/executiveviewbooking.component';
 import { ExecutivechangestatusComponent } from './component/executivechangestatus/executivechangestatus.component';
+import { ExecutivesearchComponent } from './component/executivesearch/executivesearch.component';
 
 const routes: Routes = [
   {path:"login",component:LoginComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path:"customerhome",component:CustomerhomeComponent},
   {path:"customerbooking",component:CustomerbookingComponent},
   {path:"executiveviewbooking",component:ExecutiveviewbookingComponent},
-  {path:"executivechangestatus",component:ExecutivechangestatusComponent}
+  {path:"executivechangestatus",component:ExecutivechangestatusComponent},
+  {path:"executivesearch",component:ExecutivesearchComponent}
 
 ];
 

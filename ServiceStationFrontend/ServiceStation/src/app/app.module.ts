@@ -14,6 +14,7 @@ import { CustomerhomeComponent } from './component/customerhome/customerhome.com
 import { CustomerbookingComponent } from './component/customerbooking/customerbooking.component';
 import { ExecutiveviewbookingComponent } from './component/executiveviewbooking/executiveviewbooking.component';
 import { ExecutivechangestatusComponent } from './component/executivechangestatus/executivechangestatus.component';
+import { ExecutivesearchComponent } from './component/executivesearch/executivesearch.component';
 
 
 
@@ -28,7 +29,8 @@ import { ExecutivechangestatusComponent } from './component/executivechangestatu
     CustomerhomeComponent,
     CustomerbookingComponent,
     ExecutiveviewbookingComponent,
-    ExecutivechangestatusComponent
+    ExecutivechangestatusComponent,
+    ExecutivesearchComponent
   ],
   imports: [
     BrowserModule,

@@ -5,16 +5,19 @@
 </div>
 <div class="main">
     <div class="side-nav">
-        <button (click)="bookingstatus()">VIEW BOOKINGS</button>
-        <button (click)="changestatus()">CHANGE STATUS</button>
-        <button>SEARCH</button>
+        <button (click)="bookingstatus(ViewBooking)" [class.active]="viewBookingOn">VIEW BOOKINGS</button>
+        <button (click)="bookingstatus(ChangeStatus)" [class.active]="changeStatus">CHANGE STATUS</button>
+        <button (click)="bookingstatus(SearchForm)" [class.active]="searchForm">SEARCH</button>
         <button>ASSIGN JOB</button>
     </div>
     <div class="content" *ngIf="viewBookingOn">
         <app-executiveviewbooking></app-executiveviewbooking>
     </div>
     <div class="content" *ngIf="changeStatus">
-       <app-executivechangestatus></app-executivechangestatus>
+        <app-executivechangestatus></app-executivechangestatus>
+    </div>
+    <div class="content" *ngIf="searchForm">
+        <app-executivesearch></app-executivesearch>
     </div>
 
 </div>
