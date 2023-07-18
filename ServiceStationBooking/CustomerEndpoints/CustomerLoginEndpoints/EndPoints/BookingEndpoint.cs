@@ -34,8 +34,8 @@ public class BookingValidator : Validator<Booking>
         // RuleFor(x => x.ServiceId)
         //     .NotEmpty()
         //     .WithMessage("Serevice id is required!");
-        RuleFor(x => x.BookingDate)
-            .NotEmpty()
-            .WithMessage("Booking date is required!");
+        // RuleFor(x => x.BookingDate)
+        //     .NotEmpty()
+        //     .WithMessage("Booking date is required!");
     }
 }

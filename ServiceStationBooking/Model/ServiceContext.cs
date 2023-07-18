@@ -45,13 +45,11 @@ public partial class ServiceContext : DbContext
                 .ValueGeneratedOnAdd()
                 .HasColumnName("customer_id");
             entity.Property(e => e.ExecutiveId).HasColumnName("executive_id");
-            entity.Property(e => e.ServiceId)
-                .ValueGeneratedOnAdd()
-                .HasColumnName("service_id");
             entity.Property(e => e.Status)
                 .HasMaxLength(20)
                 .HasDefaultValueSql("'new'::character varying")
                 .HasColumnName("status");
+            entity.Property(e => e.TechnicianId).HasColumnName("technician_id");
 
             entity.HasOne(d => d.Customer).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.CustomerId)
@@ -61,11 +59,6 @@ public partial class ServiceContext : DbContext
             entity.HasOne(d => d.Executive).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.ExecutiveId)
                 .HasConstraintName("fk_booking_service_executive");
-
-            entity.HasOne(d => d.Service).WithMany(p => p.Bookings)
-                .HasForeignKey(d => d.ServiceId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("booking_service_id_fkey");
         });
 
         modelBuilder.Entity<Customer>(entity =>
@@ -163,9 +156,6 @@ public partial class ServiceContext : DbContext
             entity.ToTable("service_technician");
 
             entity.Property(e => e.TechnicianId).HasColumnName("technician_id");
-            entity.Property(e => e.BookingId)
-                .HasDefaultValueSql("0")
-                .HasColumnName("booking_id");
             entity.Property(e => e.ContactNumber)
                 .HasMaxLength(20)
                 .HasColumnName("contact_number");

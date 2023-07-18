@@ -1,4 +1,4 @@
-<br><br><br><br><br><br><br>  
+<br><br><br><br><br><br><br>
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -10,7 +10,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of data">
+        <tr *ngFor="let item of data | paginate:{itemsPerPage:tableSize,
+
+            currentPage:page,
+
+        totalItems:count}; let i=index">
             <td>{{ item.customerId }}</td>
             <td>{{ item.customerName }}</td>
             <td>{{ item.contactNumber }}</td>
@@ -19,3 +23,6 @@
         </tr>
     </tbody>
 </table>
+<pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+
+</pagination-controls>

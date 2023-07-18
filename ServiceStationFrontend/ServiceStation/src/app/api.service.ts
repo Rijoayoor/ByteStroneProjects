@@ -7,6 +7,7 @@ import { Booking } from './model/booking';
 import { Bookingdetails } from './model/bookingdetails';
 import { Executivebooking } from './model/executivebooking';
 import { Executivestatuschange } from './model/executivestatuschange';
+import { AssignJobs } from './model/assignjob';
 
 @Injectable({
   providedIn: 'root'
@@ -72,9 +73,21 @@ export class ApiService {
   }
 
 
-  // Updated By Nevin
-  searchRequest(searchCriteria1:any,searchCriteria2:any,searchCriteria3:any,searchCriteria4:any,searchCriteria5:any){
-     return this.Http.get(`http://localhost:5087/api/details/name/${searchCriteria1}/date/${searchCriteria2}/email/${searchCriteria3}/vehiclemodel/${searchCriteria4}/requirement/${searchCriteria5}`)
+  
+  searchRequest(searchCriteria1:any,searchCriteria2:any,searchCriteria3:any,searchCriteria4:any,searchCriteria5:any,roleId:number){
+     return this.Http.get(`http://localhost:5087/api/details/name/${searchCriteria1||null}/date/${searchCriteria2||null}/email/${searchCriteria3||null}/vehiclemodel/${searchCriteria4||null}/requirement/${searchCriteria5||null}/${roleId}`)
+  }
+
+  viewjobassign(roleId:number){
+    return this.Http.get<Executivestatuschange>(`http://localhost:5087/api/detailsstatus/${roleId}`)
+  }
+
+  viewtechnician(){
+    return this.Http.get(`http://localhost:5087/api/technician`)
+  }
+  updateTechnician(roleId:number,bookingId:number,assign:AssignJobs){
+    return this.Http.put(`http://localhost:5087/api/executive/${roleId}/booking/${bookingId}`,assign)
+
   }
 
 

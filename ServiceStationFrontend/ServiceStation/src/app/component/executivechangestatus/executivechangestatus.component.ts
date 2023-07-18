@@ -13,6 +13,14 @@ export class ExecutivechangestatusComponent {
   name = ""
   data:any
   stat:any
+
+  POSTS:any;
+
+  page:number=1;
+
+  count:number=0;
+
+  tableSize:number=10;
   // customerName!: string
   // contactNumber!: string
   // email!: string
@@ -49,6 +57,12 @@ export class ExecutivechangestatusComponent {
 
   // })
   // this.route.navigateByUrl("/customer")
+
+  onTableDataChange(event:any){
+
+    this.page=event;    
+
+  }
 ngOnInit(){
   this.service.changestatusexecutive(this.roleId).subscribe(res=>{
     this.data=res
@@ -62,9 +76,6 @@ ngOnInit(){
   
 }
  
-
-
-
 update(customerId:number,e:Executivestatuschange){
   // if(e.status==="Cancelled"){
   //   alert("cant update")
@@ -73,7 +84,6 @@ update(customerId:number,e:Executivestatuschange){
   
   // else{
   
-
   this.service.updatestatus(this.roleId,customerId,e).subscribe(res=>{
     alert("Updated !!")
    

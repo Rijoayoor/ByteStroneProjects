@@ -13,6 +13,7 @@ export class ExecutiveComponent {
   viewBookingOn = true
   changeStatus = false
   searchForm = false
+  assignJob=false
   constructor(private service: ApiService, private route: Router) { }
   ngOnInit() {
     this.name = this.service.nameGetter()
@@ -44,27 +45,33 @@ export class ExecutiveComponent {
   ViewBooking = "ViewBooking"
   SearchForm = "searchForm"
   ChangeStatus = "changeStatus"
+  AssignJob="assignJob"
   bookingstatus(ViewBooking: string) {
     if (ViewBooking == "ViewBooking") {
       this.viewBookingOn = true
       this.changeStatus = false;
       this.searchForm = false
+      this.assignJob=false
     }
     else if (ViewBooking == "changeStatus") {
       this.viewBookingOn = false
       this.changeStatus = true
       this.searchForm = false
+      this.assignJob=false
     }
     else if (ViewBooking == "searchForm") {
       this.viewBookingOn = false
       this.changeStatus = false
       this.searchForm = true
+      this.assignJob=false
 
     }
-    else {
+    else if(ViewBooking=="assignJob"){
       this.viewBookingOn = false
       this.changeStatus = false
       this.searchForm = false
+      this.assignJob=true
+
 
     }
     // this.route.navigateByUrl("/executiveviewbooking")

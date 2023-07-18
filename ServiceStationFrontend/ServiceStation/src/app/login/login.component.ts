@@ -27,7 +27,8 @@ export class LoginComponent {
   Login() {
 
     this.service.login(this.Username, this.Password, this.Userrole).subscribe(res => {
-      console.log(this.Username, this.Password, this.Userrole)
+      if(res!=null){
+        console.log(this.Username, this.Password, this.Userrole)
       this.data = res
       console.log(this.data)
       this.name = this.data.name
@@ -40,6 +41,11 @@ export class LoginComponent {
       console.log(this.data.roleId)
       this.route.navigate([this.data.userrole])
       alert("Login successfull!")
+      }
+      else{
+        alert("Invalid Login")
+      }
+      
 
     })
   }

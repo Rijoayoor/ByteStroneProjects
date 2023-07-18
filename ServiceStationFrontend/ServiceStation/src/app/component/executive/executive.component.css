@@ -17,7 +17,7 @@
     height: 2rem;
     background-color: white;
     border-radius: .8rem;
-    transition: all .5s ease-in-out;
+    /* transition: all .5s ease-in-out; */
     font-weight: 600;
 
     /* width: 2em; */

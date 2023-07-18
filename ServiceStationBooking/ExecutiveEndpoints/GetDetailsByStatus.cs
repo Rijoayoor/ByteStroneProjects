@@ -24,7 +24,7 @@ public class GetDetailsByStatusEndpoint : EndpointWithoutRequest<dynamic[]>
                         && 
                         (booking.Status == "new"
                         || booking.Status == "In progress"
-                        || booking.Status == "completed"
+                        // || booking.Status == "completed"
                         // || booking.Status == "Cancelled"
                         )
                       select new

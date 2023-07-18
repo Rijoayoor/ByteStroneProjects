@@ -26,7 +26,7 @@ public class GetDetailsByNameEndpoint : EndpointWithoutRequest<dynamic[]>
                           booking.BookingId,
                           booking.BookingDate,
                           booking.CustomerId,
-                          booking.ServiceId,
+                        //   booking.ServiceId,
                           customer.CustomerName
                       }).ToArray();
         if (result == null)

@@ -1,14 +1,14 @@
 <!-- search.component.html -->
 
 <div>
-<div class="form-container">
-    <br>
-<br><br><br><br><br><br><br>
-    <input type="text" [(ngModel)]="searchCriteria1" placeholder="Search criteria 1">
-    <input type="text" [(ngModel)]="searchCriteria2" placeholder="Search criteria 2">
-    <input type="text" [(ngModel)]="searchCriteria3" placeholder="Search criteria 3">
-    <input type="text" [(ngModel)]="searchCriteria4" placeholder="Search criteria 4">
-    <input type="text" [(ngModel)]="searchCriteria5" placeholder="Search criteria 5">
+<div class="searchbox">
+    
+<!-- <br><br><br><br><br><br><br> -->
+    <input type="text" [(ngModel)]="searchCriteria1" placeholder="Name">
+    <input type="text" [(ngModel)]="searchCriteria2" placeholder="Booking Date">
+    <input type="text" [(ngModel)]="searchCriteria3" placeholder="Email">
+    <input type="text" [(ngModel)]="searchCriteria4" placeholder="Vehicle Model">
+    <input type="text" [(ngModel)]="searchCriteria5" placeholder="Service Requirement">
     <button (click)="setSearch()">Search</button>
   </div>
   <div class="content" *ngIf="viewSearchResult" >
@@ -31,7 +31,10 @@
                 <td>{{ item.serviceRequirements }}</td>
                 <td>{{item.status}}</td>
             </tr>
+
         </tbody>
     </table>
+    
+
   </div>
 </div>

@@ -15,6 +15,8 @@ import { CustomerbookingComponent } from './component/customerbooking/customerbo
 import { ExecutiveviewbookingComponent } from './component/executiveviewbooking/executiveviewbooking.component';
 import { ExecutivechangestatusComponent } from './component/executivechangestatus/executivechangestatus.component';
 import { ExecutivesearchComponent } from './component/executivesearch/executivesearch.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ExecutivejobassignComponent } from './component/executivejobassign/executivejobassign.component';
 
 
 
@@ -30,13 +32,15 @@ import { ExecutivesearchComponent } from './component/executivesearch/executives
     CustomerbookingComponent,
     ExecutiveviewbookingComponent,
     ExecutivechangestatusComponent,
-    ExecutivesearchComponent
+    ExecutivesearchComponent,
+    ExecutivejobassignComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

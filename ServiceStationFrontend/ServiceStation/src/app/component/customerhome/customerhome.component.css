@@ -216,10 +216,11 @@ label {
 }
 
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input[type="date"] {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -237,9 +238,9 @@ button[type="submit"]:hover {
   background-color: #45a049;
 }
 
-form {
-  /* background-color: red; */
-}
+/* form {
+  background-color: red;
+} */
 
 /* customer-form.component.css */
 
@@ -290,5 +291,5 @@ button[type="submit"]:hover {
 }
 
 input:required:invalid {
-  border-color: red;
+  border-color: rgb(249, 249, 249);
 }

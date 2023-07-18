@@ -28,9 +28,9 @@ public class LoginEndpoint : Endpoint<Login>
             await SendAsync(user);
         }
         else
-        {
+        { 
             // User credentials are invalid
-            await SendAsync("Invalid username or password or userrole");
+            await SendAsync(null);
         }
     }
 }
