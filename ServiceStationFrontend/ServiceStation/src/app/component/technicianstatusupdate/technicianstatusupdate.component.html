@@ -1,6 +1,3 @@
-
-
-
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -29,28 +26,27 @@
 
             <td>
 
-                <select [(ngModel)]="item.status" >
-    
-                  <option value="new">New</option>
-    
-                  <option value="In progress">In progress</option>
-    
-                  <option value="completed">Completed</option>
-    
-                  <option value="Cancelled">Cancelled</option>
-    
-                 
+                <select [(ngModel)]="item.status">
+
+                   
+
+                    <option value="In progress">In progress</option>
+
+                    <option value="completed">Completed</option>
+
+                   
+
                 </select>
-    
-              </td>
-<td><button (click)="update(item.customerId,item)"  >Update</button></td>
+
+            </td>
+            <td><button (click)="update(item.customerId,item)">Update</button></td>
 
             <!-- <td>
                 <button (click)="editItem()">Edit</button>
             </td> -->
         </tr>
     </tbody>
-    
+
 </table>
 <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
 

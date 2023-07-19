@@ -21,42 +21,11 @@ export class ExecutivechangestatusComponent {
   count:number=0;
 
   tableSize:number=10;
-  // customerName!: string
-  // contactNumber!: string
-  // email!: string
-  // address!: string
-  // vehicleNumber!: string
-  // vehicleModel!: string
-  // serviceRequirements!: string
-  // status!:string
+  
   roleId=this.service.roleIdGetter()
   customerId=this.service.customerIdGetter()
   constructor(private service: ApiService) { }
   ex=Executivestatuschange
-
-  // editItem(){
-    
-
-  // let customer: Customer = new Customer();
-
-  // customer.customerName = this.customerName,
-  //   customer.contactNumber = this.contactNumber,
-  //   customer.email = this.email,
-  //   customer.address = this.address,
-  //   customer.vehicleNumber = this.vehicleNumber,
-  //   customer.vehicleModel = this.vehicleModel,
-  //   customer.serviceRequirements = this.serviceRequirements
-  // console.log(customer)
-  // this.service.customerDetails(customer).subscribe(res => {
-  //   this.data=res
-  //   console.log(res)
-  //   console.log(res.customerId);
-  //   this.service.customerIdSetter(res.customerId);
-  //   // localStorage.setItem("cid",res.customerId.toString())
-  //   alert("Customer Details Added!")
-
-  // })
-  // this.route.navigateByUrl("/customer")
 
   onTableDataChange(event:any){
 

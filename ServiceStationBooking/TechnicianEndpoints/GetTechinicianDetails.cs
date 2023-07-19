@@ -15,6 +15,7 @@ public class TechnicianGetEndpoint : EndpointWithoutRequest<ServiceTechnician[]>
     }
     public override async Task HandleAsync(CancellationToken ct)
     {
-        await SendAsync(_context.ServiceTechnicians.ToArray());
+        var technicianCount=_context.ServiceTechnicians.OrderBy(e=>e.Count).Where(e=>e.Count<10);
+        await SendAsync(technicianCount.ToArray());
     }
 }

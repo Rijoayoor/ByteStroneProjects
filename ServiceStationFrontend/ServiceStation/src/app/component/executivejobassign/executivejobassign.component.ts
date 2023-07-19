@@ -16,6 +16,8 @@ export class ExecutivejobassignComponent {
   data:any
   stat:any
   technicians:any
+  techniciandetails:any
+  lengths:any
 
   POSTS:any;
 
@@ -38,10 +40,15 @@ export class ExecutivejobassignComponent {
 ngOnInit(){
   this.service.viewjobassign(this.roleId).subscribe(res=>{
     this.data=res
+   console.log(this.data);
    
   })
   this.service.viewtechnician().subscribe(res=>{
     this.technicians=res
+    console.log(this.technicians);
+    this.lengths=this.technicians.length;
+    console.log(this.lengths);
+    
   })
 }
  
@@ -51,8 +58,11 @@ assign(bookingId:number,assign:AssignJobs){
   
   
   this.service.updateTechnician(this.roleId,bookingId,assign).subscribe(res=>{
+    console.log(res);
+    
+    
 
-    alert("Updated !!")
+    alert("Job Assigned !!")
    
     
   })}

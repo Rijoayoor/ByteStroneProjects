@@ -159,6 +159,13 @@ public partial class ServiceContext : DbContext
             entity.Property(e => e.ContactNumber)
                 .HasMaxLength(20)
                 .HasColumnName("contact_number");
+            entity.Property(e => e.Count).HasColumnName("count");
+            entity.Property(e => e.ExperienceArea)
+                .HasColumnType("character varying")
+                .HasColumnName("experience_area");
+            entity.Property(e => e.ExperienceYear)
+                .HasColumnType("character varying")
+                .HasColumnName("experience_year");
             entity.Property(e => e.TechnicianName)
                 .HasMaxLength(20)
                 .HasColumnName("technician_name");

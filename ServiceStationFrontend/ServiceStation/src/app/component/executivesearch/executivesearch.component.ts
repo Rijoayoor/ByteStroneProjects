@@ -14,12 +14,26 @@ export class ExecutivesearchComponent {
   searchCriteria4: string = "";
   searchCriteria5: string = "";
 
+  POSTS:any;
+
+  page:number=1;
+
+  count:number=0;
+
+  tableSize:number=10;
+
   viewSearchResult = false
   roleId = this.service.roleIdGetter()
   constructor(private service: ApiService) {
 
 
   }
+  onTableDataChange(event:any){
+
+    this.page=event;    
+
+  }
+
 
   // isSearchEnabled() {
   //   // Return true if all three search criteria are filled

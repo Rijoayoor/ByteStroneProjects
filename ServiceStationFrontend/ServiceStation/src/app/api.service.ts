@@ -8,6 +8,8 @@ import { Bookingdetails } from './model/bookingdetails';
 import { Executivebooking } from './model/executivebooking';
 import { Executivestatuschange } from './model/executivestatuschange';
 import { AssignJobs } from './model/assignjob';
+import { Technicianbooking } from './model/technicianbooking';
+import { Technicianstatuschange } from './model/technicianstatuschange';
 
 @Injectable({
   providedIn: 'root'
@@ -87,6 +89,18 @@ export class ApiService {
   }
   updateTechnician(roleId:number,bookingId:number,assign:AssignJobs){
     return this.Http.put(`http://localhost:5087/api/executive/${roleId}/booking/${bookingId}`,assign)
+
+  }
+  viewbookingtechnician(roleId:number){
+    return this.Http.get<Technicianbooking>(`http://localhost:5087/api/technician/${roleId}`)
+  }
+
+  changestatustechnician(roleId:number){
+    return this.Http.get<Technicianstatuschange>(`http://localhost:5087/api/detailsstatustechnician/${roleId}`)
+  }
+
+  updatestatustechnician(roleId:number,customerId:number,e:Technicianstatuschange){
+    return this.Http.put(`http://localhost:5087/api/technician/${roleId}/customer/${customerId}`,e)
 
   }
 

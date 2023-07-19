@@ -8,5 +8,7 @@ export class AssignJobs {
     status!: string
     executiveId!: number
     technicianId!:number
+    experienceYear!:string
+    experienceArea!:string
 
 }

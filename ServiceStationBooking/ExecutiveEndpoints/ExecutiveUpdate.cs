@@ -17,22 +17,7 @@ public class ExecutiveUpdateEnpoint : Endpoint<Booking>
     }
     public override async Task HandleAsync(Booking req, CancellationToken ct)
     {
-        // var id = Route<int>("id");
-        // var executives = _context.Bookings.Where(s => s.ExecutiveId == id);
-        // if (executives == null)
-        // {
-        //     await SendNotFoundAsync();
-        // }
-        // foreach(var executive in executives)
-        // {
-        // executive.Status = req.Status;
-        // }
-        // await _context.SaveChangesAsync();
-        // Count.updatecount(id,_context);
-        // await SendAsync(executives);
-
-        //     var id = Route<int>("id");
-        // var executiveId = req.ExecutiveId;
+        
 
         var executiveId = Route<int>("executiveId");
         var customerId = Route<int>("customerId");
@@ -45,9 +30,15 @@ public class ExecutiveUpdateEnpoint : Endpoint<Booking>
             return;
         }
 
+        var executives = _context.ServiceExecutives.ToList();
+        var sortedExecutives = executives.OrderBy(e => e.Count);
+        var selectedExecutives = sortedExecutives.First();
+        booking.ExecutiveId = selectedExecutives.ExecutiveId; 
+
         booking.Status = req.Status;
         await _context.SaveChangesAsync();
-        Count.updatecount(booking.BookingId, _context);
+        // Count.updatecount(booking.BookingId, _context);
+        Count.updatecount(selectedExecutives.ExecutiveId, _context);
 
         await SendAsync(booking);
     }
