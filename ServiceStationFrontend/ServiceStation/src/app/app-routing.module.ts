@@ -9,18 +9,19 @@ import { CustomerbookingComponent } from './component/customerbooking/customerbo
 import { ExecutiveviewbookingComponent } from './component/executiveviewbooking/executiveviewbooking.component';
 import { ExecutivechangestatusComponent } from './component/executivechangestatus/executivechangestatus.component';
 import { ExecutivesearchComponent } from './component/executivesearch/executivesearch.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
-  {path:"login",component:LoginComponent},
-  {path:"customer",component:CustomerComponent},
-  {path:"executive",component:ExecutiveComponent},
-  {path:"technician",component:TechnicianComponent},
-  {path:"",component:LoginComponent},
-  {path:"customerhome",component:CustomerhomeComponent},
-  {path:"customerbooking",component:CustomerbookingComponent},
-  {path:"executiveviewbooking",component:ExecutiveviewbookingComponent},
-  {path:"executivechangestatus",component:ExecutivechangestatusComponent},
-  {path:"executivesearch",component:ExecutivesearchComponent}
+  { path: "login", component: LoginComponent },
+  { path: "customer", component: CustomerComponent, canActivate: [AuthGuard]},
+  { path: "executive", component: ExecutiveComponent, canActivate: [AuthGuard] },
+  { path: "technician", component: TechnicianComponent, canActivate: [AuthGuard] },
+  { path: "", component: LoginComponent },
+  { path: "customerhome", component: CustomerhomeComponent, canActivate: [AuthGuard] },
+  { path: "customerbooking", component: CustomerbookingComponent , canActivate: [AuthGuard]},
+  { path: "executiveviewbooking", component: ExecutiveviewbookingComponent , canActivate: [AuthGuard] },
+  { path: "executivechangestatus", component: ExecutivechangestatusComponent, canActivate: [AuthGuard] },
+  { path: "executivesearch", component: ExecutivesearchComponent, canActivate: [AuthGuard] }
 
 ];
 

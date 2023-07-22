@@ -24,6 +24,7 @@ export class CustomerComponent {
 
   }
   logout() {
+    sessionStorage.removeItem("username");
     this.route.navigateByUrl("/login")
   }
   customerdetails() {

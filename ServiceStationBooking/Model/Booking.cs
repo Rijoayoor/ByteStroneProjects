@@ -20,4 +20,6 @@ public partial class Booking
     public virtual Customer Customer { get; set; } = null!;
 
     public virtual ServiceExecutive? Executive { get; set; }
+
+    public virtual ServiceTechnician? Technician { get; set; }
 }

@@ -59,6 +59,10 @@ public partial class ServiceContext : DbContext
             entity.HasOne(d => d.Executive).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.ExecutiveId)
                 .HasConstraintName("fk_booking_service_executive");
+
+            entity.HasOne(d => d.Technician).WithMany(p => p.Bookings)
+                .HasForeignKey(d => d.TechnicianId)
+                .HasConstraintName("fk_booking_servicetechnician");
         });
 
         modelBuilder.Entity<Customer>(entity =>

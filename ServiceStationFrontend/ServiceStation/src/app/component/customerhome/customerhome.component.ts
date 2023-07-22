@@ -69,7 +69,6 @@ export class CustomerhomeComponent {
 
       })
       
-
     }
     else {
       alert("Please fill the required fields!")

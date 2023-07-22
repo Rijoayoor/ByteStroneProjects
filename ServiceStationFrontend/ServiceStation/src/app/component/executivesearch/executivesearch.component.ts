@@ -8,19 +8,19 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./executivesearch.component.css']
 })
 export class ExecutivesearchComponent {
-  searchCriteria1: string = "";
-  searchCriteria2: string = "";
-  searchCriteria3: string = "";
-  searchCriteria4: string = "";
-  searchCriteria5: string = "";
+  searchCriteria1: string ="";
+  searchCriteria2: string ="";
+  searchCriteria3: string ="";
+  searchCriteria4: string ="";
+  searchCriteria5: string ="";
 
-  POSTS:any;
+  POSTS: any;
 
-  page:number=1;
+  page: number = 1;
 
-  count:number=0;
+  count: number = 0;
 
-  tableSize:number=10;
+  tableSize: number = 10;
 
   viewSearchResult = false
   roleId = this.service.roleIdGetter()
@@ -28,9 +28,9 @@ export class ExecutivesearchComponent {
 
 
   }
-  onTableDataChange(event:any){
+  onTableDataChange(event: any) {
 
-    this.page=event;    
+    this.page = event;
 
   }
 
@@ -43,27 +43,30 @@ export class ExecutivesearchComponent {
 
   searchValue: any;
   setSearch() {
+    console.log(this.searchCriteria2)
+    console.log(this.searchCriteria4)
+    console.log(this.searchCriteria3)
+    console.log(this.searchCriteria5)
 
-    if(this.searchCriteria1==""&&this.searchCriteria2==""&&this.searchCriteria3==""&&this.searchCriteria4==""&&this.searchCriteria5=="")
-    {
+
+    if (this.searchCriteria1 == "" && this.searchCriteria2 == "" && this.searchCriteria3 == "" && this.searchCriteria4 == "" && this.searchCriteria5 == "") {
       alert("Please fill the required fields!!")
     }
-   else{
+    else {
 
-   
 
-    this.service.searchRequest(this.searchCriteria1, this.searchCriteria2, this.searchCriteria3, this.searchCriteria4, this.searchCriteria5, this.roleId).subscribe((res: any) => {
-      this.searchValue = res;
-      if (this.searchValue != null) {
-        console.log(this.searchValue);
-        this.viewSearchResult = true
-      }
-      else if (this.searchValue == null) {
-        
-        alert("No Records found!")
-      }
 
-    })
+      this.service.searchRequest(this.searchCriteria1, this.searchCriteria2, this.searchCriteria3, this.searchCriteria4, this.searchCriteria5, this.roleId).subscribe((res: any) => {
+        this.searchValue = res;
+        if (this.searchValue != null) {
+          console.log(this.searchValue);
+          this.viewSearchResult = true
+        }
+        else if (this.searchValue == null) {
+          alert("No Records found!")
+        }
+
+      })
+    }
   }
-}
 }

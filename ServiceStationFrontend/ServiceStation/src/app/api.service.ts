@@ -19,8 +19,8 @@ export class ApiService {
 
   name = ""
   role = ""
-  customerId!:number
-  roleId!:number
+  customerId!: number
+  roleId!: number
 
   constructor(private Http: HttpClient) { }
 
@@ -28,79 +28,90 @@ export class ApiService {
     return this.Http.post(" http://localhost:5087/api/login", { Username, Password, Userrole })
   }
   nameSetter(name: string) {
-    this.name = name
+    localStorage.setItem("name",name);
+    //this.name = name
   }
   nameGetter() {
+
+    this.name=localStorage.getItem("name") || " ";
     return this.name
   }
+
   roleSetter(role: string) {
-    this.role = role
+    localStorage.setItem("role",role);
+    // this.role = role
   }
   roleGetter() {
+    this.role=localStorage.getItem("role") || " ";
     return this.role
   }
 
-  customerDetails(customerDetails:Customer){
-    return this.Http.post<CustomerDetails>("http://localhost:5087/api/customer",customerDetails)
+  customerDetails(customerDetails: Customer) {
+    return this.Http.post<CustomerDetails>("http://localhost:5087/api/customer", customerDetails)
 
   }
-  Bookingdetails(Bookingdetails:Booking){
-    return this.Http.post<Bookingdetails>("http://localhost:5087/api/booking",Bookingdetails)
+  Bookingdetails(Bookingdetails: Booking) {
+    return this.Http.post<Bookingdetails>("http://localhost:5087/api/booking", Bookingdetails)
 
 
   }
-  customerIdSetter(id:number){
-    this.customerId=id
+  customerIdSetter(id: number) {
+    this.customerId = id
   }
-  customerIdGetter(){
+  customerIdGetter() {
     return this.customerId
   }
-  roleIdSetter(roleId:number)
-  {
-    this.roleId=roleId
+  roleIdSetter(roleId: number) {
+    localStorage.setItem("roleId",JSON.stringify(roleId));
+    this.roleId = roleId
   }
-  roleIdGetter(){
+  roleIdGetter() {
+   
+    this.roleId=JSON.parse(localStorage.getItem("roleId") as "4")
     return this.roleId
   }
 
-  viewbookingexecutive(roleId:number){
-    return this.Http.get<Executivebooking>(`http://localhost:5087/api/executive/${roleId}`)
+  viewbookingexecutive(roleId: any) {
+    return this.Http.get<Executivebooking>(`http://localhost:5087/api/executive/${this.roleId}`)
   }
-  changestatusexecutive(roleId:number){
+  changestatusexecutive(roleId: number) {
     return this.Http.get<Executivestatuschange>(`http://localhost:5087/api/detailsstatus/${roleId}`)
   }
-  updatestatus(roleId:number,customerId:number,e:Executivestatuschange){
-    return this.Http.put(`http://localhost:5087/api/executive/${roleId}/customer/${customerId}`,e)
+  updatestatus(roleId: number, customerId: number, e: Executivestatuschange) {
+    return this.Http.put(`http://localhost:5087/api/executive/${roleId}/customer/${customerId}`, e)
 
   }
-
-
-  
-  searchRequest(searchCriteria1:any,searchCriteria2:any,searchCriteria3:any,searchCriteria4:any,searchCriteria5:any,roleId:number){
-     return this.Http.get(`http://localhost:5087/api/details/name/${searchCriteria1||null}/date/${searchCriteria2||null}/email/${searchCriteria3||null}/vehiclemodel/${searchCriteria4||null}/requirement/${searchCriteria5||null}/${roleId}`)
+  searchRequest(searchCriteria1: any, searchCriteria2: any, searchCriteria3: any, searchCriteria4: any, searchCriteria5: any, roleId: number) {
+    return this.Http.get(`http://localhost:5087/api/details/name/${searchCriteria1 || null}/date/${searchCriteria2 || null}/email/${searchCriteria3 || null}/vehiclemodel/${searchCriteria4 || null}/requirement/${searchCriteria5 || null}/${roleId}`)
   }
 
-  viewjobassign(roleId:number){
+  viewjobassign(roleId: number) {
     return this.Http.get<Executivestatuschange>(`http://localhost:5087/api/detailsstatus/${roleId}`)
   }
 
-  viewtechnician(){
+  viewtechnician() {
     return this.Http.get(`http://localhost:5087/api/technician`)
   }
-  updateTechnician(roleId:number,bookingId:number,assign:AssignJobs){
-    return this.Http.put(`http://localhost:5087/api/executive/${roleId}/booking/${bookingId}`,assign)
+  updateTechnician(roleId: number, bookingId: number, assign: AssignJobs) {
+    return this.Http.put(`http://localhost:5087/api/executive/${roleId}/booking/${bookingId}`, assign)
 
   }
-  viewbookingtechnician(roleId:number){
-    return this.Http.get<Technicianbooking>(`http://localhost:5087/api/technician/${roleId}`)
+  viewbookingtechnician(roleId: any) {
+    return this.Http.get<Technicianbooking>(`http://localhost:5087/api/technician/${this.roleId}`)
   }
 
-  changestatustechnician(roleId:number){
+  changestatustechnician(roleId: number) {
     return this.Http.get<Technicianstatuschange>(`http://localhost:5087/api/detailsstatustechnician/${roleId}`)
   }
 
-  updatestatustechnician(roleId:number,customerId:number,e:Technicianstatuschange){
-    return this.Http.put(`http://localhost:5087/api/technician/${roleId}/customer/${customerId}`,e)
+  updatestatustechnician(roleId: number, customerId: number, e: Technicianstatuschange) {
+    return this.Http.put(`http://localhost:5087/api/technician/${roleId}/customer/${customerId}`, e)
+
+  }
+
+  IsLoggedIn() {
+
+    return sessionStorage.getItem("username") != null
 
   }
 

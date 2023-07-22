@@ -18,10 +18,11 @@ export class TechnicianComponent {
   
   constructor(private service:ApiService,private route: Router){}
   ngOnInit(){
-    this.name=this.service.nameGetter()
+   this.name=this.service.nameGetter()
     this.role=this.service.roleGetter()
   }
   logout() {
+    sessionStorage.removeItem("username");
     this.route.navigateByUrl("/login")
   }
 

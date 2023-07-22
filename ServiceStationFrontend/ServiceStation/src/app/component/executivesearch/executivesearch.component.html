@@ -29,12 +29,15 @@
                 currentPage:page,
     
             totalItems:count}; let i=index">
+            <!-- <ng-container *ngFor="let item of searchValue">
+            <tr *ngIf="item.vehicleModel==='car'"> -->
                 <td>{{ item.customerId }}</td>
                 <td>{{ item.customerName }}</td>
                 <td>{{ item.contactNumber }}</td>
                 <td>{{ item.serviceRequirements }}</td>
                 <td>{{item.status}}</td>
             </tr>
+        <!-- </ng-container> -->
 
         </tbody>
     </table>

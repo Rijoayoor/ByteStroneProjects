@@ -27,25 +27,27 @@ export class LoginComponent {
   Login() {
 
     this.service.login(this.Username, this.Password, this.Userrole).subscribe(res => {
-      if(res!=null){
+      if (res != null) {
         console.log(this.Username, this.Password, this.Userrole)
-      this.data = res
-      console.log(this.data)
-      this.name = this.data.name
-      this.role = this.data.userrole
-      this.roleId = this.data.roleId
-      this.service.nameSetter(this.name);
-      this.service.roleSetter(this.role);
-      this.service.customerIdSetter(this.data.id)
-      this.service.roleIdSetter(this.data.roleId)
-      console.log(this.data.roleId)
-      this.route.navigate([this.data.userrole])
-      alert("Login successfull!")
+        this.data = res
+        console.log(this.data)
+        this.name = this.data.name
+        this.role = this.data.userrole
+        
+        this.roleId = this.data.roleId
+        this.service.nameSetter(this.name);
+        this.service.roleSetter(this.role);
+        this.service.customerIdSetter(this.data.id)
+        this.service.roleIdSetter(this.data.roleId)
+        console.log(this.data.roleId)
+        sessionStorage.setItem("username", this.data.username)
+        this.route.navigate([this.data.userrole])
+        alert("Login successfull!")
       }
-      else{
+      else {
         alert("Invalid Login")
       }
-      
+
 
     })
   }

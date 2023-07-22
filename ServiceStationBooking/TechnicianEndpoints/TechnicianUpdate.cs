@@ -33,7 +33,7 @@ public class TechnicianUpdateEnpoint : Endpoint<Booking>
         var technicians = _context.ServiceTechnicians.ToList();
         var sortedTechnicians = technicians.OrderBy(e => e.Count);
         var selectedTechnicians = sortedTechnicians.First();
-        booking.TechnicianId = selectedTechnicians.TechnicianId;
+        // booking.TechnicianId = selectedTechnicians.TechnicianId;
         booking.Status = req.Status;
 
         await _context.SaveChangesAsync();

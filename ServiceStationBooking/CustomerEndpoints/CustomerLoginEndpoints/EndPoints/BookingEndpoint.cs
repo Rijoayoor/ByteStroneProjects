@@ -19,7 +19,7 @@ public class BookingEnpoint : Endpoint<Booking>
         var executives = _context.ServiceExecutives.ToList();
         var sortedExecutives = executives.OrderBy(e => e.Count);
         var selectedExecutives = sortedExecutives.First();
-        booking.ExecutiveId = selectedExecutives.ExecutiveId;   
+        booking.ExecutiveId = selectedExecutives.ExecutiveId;
         System.Console.WriteLine(booking);
         _context.Bookings.Add(booking);
         await _context.SaveChangesAsync();

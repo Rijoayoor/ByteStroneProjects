@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./executive.component.css']
 })
 export class ExecutiveComponent {
-  name = ""
+  name:String = ""
   role = ""
   viewBookingOn = true
   changeStatus = false
@@ -22,6 +22,7 @@ export class ExecutiveComponent {
   }
 
   logout() {
+    sessionStorage.removeItem("username");
     this.route.navigateByUrl("/login")
   }
 

@@ -1,50 +1,7 @@
 using FastEndpoints;
 using FluentValidation;
 using Model;
-// public class CustomerDetailsEnpoint : Endpoint<Customer>
-// {
-//     private readonly ServiceContext _context;
-//     public override void Configure()
-//     {
-//         Post("/api/customer");
-//         AllowAnonymous();
-//     }
-//     public CustomerDetailsEnpoint(ServiceContext context)
-//     {
-//         _context = context;
-//     }
-//     public override async Task HandleAsync(Customer customer, CancellationToken ct)
-//     {
 
-//         _context.Customers.Add(customer);
-//         await _context.SaveChangesAsync();
-//         Booking booking = new();
-
-//         string bookingDateStr = "2023-06-28";
-//         DateOnly bookingDate;
-
-//         if (DateOnly.TryParse(bookingDateStr, out bookingDate))
-//         {
-//         //     // Use the bookingDate value as needed
-//         //     // For example, pass it to a method or assign it to a property
-//         //     booking.BookingDate = bookingDate;
-//         //     booking.ServiceId = 3;
-//         booking.ServiceId=3;
-//         booking.BookingDate=bookingDate;
-
-//             booking.CustomerId = customer.CustomerId;
-//         }
-//         _context.Bookings.Add(booking);
-
-//         await _context.SaveChangesAsync();
-//         Count.updatecount(booking.BookingId, _context);
-
-
-//         await SendAsync(customer);
-
-
-//     }
-// }
 
 public class CustomerDetailsEnpoint : Endpoint<Customer>
 {

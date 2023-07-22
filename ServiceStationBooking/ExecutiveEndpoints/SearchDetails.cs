@@ -29,11 +29,11 @@ public class SearchDetailsEndpoint : EndpointWithoutRequest<dynamic[]>
                       join customer in _context.Customers
                       on booking.CustomerId equals customer.CustomerId
                       where (customer.CustomerName == name
-                      || booking.BookingDate == convertedDate ||
-                      customer.Email == email || customer.VehicleModel == vehiclemodel ||
-                      customer.ServiceRequirements == requirement
-                        
-                      )&& booking.ExecutiveId == executiveid
+                      || booking.BookingDate == convertedDate
+                      || customer.Email == email
+                      || customer.VehicleModel == vehiclemodel
+                      || customer.ServiceRequirements == requirement)
+                      && booking.ExecutiveId == executiveid
                       select new
                       {
                           booking.BookingId,
@@ -46,10 +46,11 @@ public class SearchDetailsEndpoint : EndpointWithoutRequest<dynamic[]>
                           customer.ContactNumber,
                           booking.Status
                       }).ToArray();
+        
+
         if (result.Length == 0)
         {
-            // await SendNotFoundAsync();
-            // System.Console.WriteLine("Hai Here");
+            
             await SendAsync(null);
         }
         else
@@ -59,3 +60,5 @@ public class SearchDetailsEndpoint : EndpointWithoutRequest<dynamic[]>
         }
     }
 }
+
+

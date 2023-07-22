@@ -16,4 +16,6 @@ public partial class ServiceTechnician
     public string? ExperienceYear { get; set; }
 
     public string? ExperienceArea { get; set; }
+
+    public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 }

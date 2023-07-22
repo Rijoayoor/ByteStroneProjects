@@ -38,8 +38,14 @@ onTableDataChange(event:any){
 
   // }
   ngOnInit() {
+
+    // const roleId=this.service.roleIdGetter()
+    console.log("jj"+this.roleId);
+    
 this.service.viewbookingexecutive(this.roleId).subscribe(res=>{
   this.data=res
+ 
+  
   console.log(this.data);
   console.log(this.roleId);
   
