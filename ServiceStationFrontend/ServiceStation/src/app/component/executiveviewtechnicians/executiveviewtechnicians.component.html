@@ -1,0 +1,30 @@
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Technician Id</th>
+            <th>Technician Name</th>
+            <th>Contact Number</th>
+            <th>Job Count</th>
+            <th>Experience</th>
+            <th>Experience Area</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data | paginate:{itemsPerPage:tableSize,
+
+            currentPage:page,
+
+        totalItems:count}; let i=index">
+            <td>{{ item.technicianId }}</td>
+            <td>{{ item.technicianName }}</td>
+            <td>{{ item.contactNumber }}</td>
+            <td>{{ item.count }}</td>
+            <td>{{item.experienceYear}}</td>
+            <td>{{item.experienceArea}}</td>
+        </tr>
+    </tbody>
+</table>
+<pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+
+</pagination-controls>

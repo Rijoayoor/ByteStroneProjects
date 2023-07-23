@@ -19,6 +19,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ExecutivejobassignComponent } from './component/executivejobassign/executivejobassign.component';
 import { TechnicianviewjobComponent } from './component/technicianviewjob/technicianviewjob.component';
 import { TechnicianstatusupdateComponent } from './component/technicianstatusupdate/technicianstatusupdate.component';
+import { ExecutiveviewtechniciansComponent } from './component/executiveviewtechnicians/executiveviewtechnicians.component';
 
 
 
@@ -37,7 +38,8 @@ import { TechnicianstatusupdateComponent } from './component/technicianstatusupd
     ExecutivesearchComponent,
     ExecutivejobassignComponent,
     TechnicianviewjobComponent,
-    TechnicianstatusupdateComponent
+    TechnicianstatusupdateComponent,
+    ExecutiveviewtechniciansComponent
   ],
   imports: [
     BrowserModule,

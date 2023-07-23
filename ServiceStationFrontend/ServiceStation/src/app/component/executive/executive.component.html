@@ -8,6 +8,7 @@
         <button (click)="bookingstatus(ViewBooking)" [class.active]="viewBookingOn">VIEW BOOKINGS</button>
         <button (click)="bookingstatus(ChangeStatus)" [class.active]="changeStatus">CHANGE STATUS</button>
         <button (click)="bookingstatus(SearchForm)" [class.active]="searchForm">SEARCH</button>
+        <button (click)="bookingstatus(ViewTechnicians)" [class.active]="viewTechnicians">VEW TECHNICIAN</button>
         <button (click)="bookingstatus(AssignJob)" [class.active]="assignJob">ASSIGN JOB</button>
     </div>
     <div class="content" *ngIf="viewBookingOn">
@@ -19,6 +20,9 @@
     </div>
     <div class="content" *ngIf="searchForm">
         <app-executivesearch></app-executivesearch>
+    </div>
+    <div class="content" *ngIf="viewTechnicians">
+        <app-executiveviewtechnicians></app-executiveviewtechnicians>
     </div>
 
     <div class="content" *ngIf="assignJob">

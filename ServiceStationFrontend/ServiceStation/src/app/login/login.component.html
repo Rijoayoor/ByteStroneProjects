@@ -4,29 +4,14 @@
 
 </head>
 
-
-<!-- <div class="container">
-    <h1>Login</h1>
-    <form #loginForm="ngForm" (ngSubmit)="submitLogin(loginForm)">
-      <input type="text"   placeholder="Username" name="Username" [(ngModel)]="Username">
-      <input type="password"  placeholder="Password" name="Password" [(ngModel)]="Password">
-      <select name="Userrole" class="dropdown" [(ngModel)]="Userrole">
-        <option value="customer">Customer</option>
-        <option value="executive">Executive</option>
-        <option value="technician">Technician</option>
-      </select>
-      <button (click)="Login()">Login</button>
-      <button type="submit">Login</button>
-    </form>
-  </div> -->
-
 <div class="container">
+  <h1 class="heading">Service Station Booking System</h1>
   <h1>Login</h1>
   <form (ngSubmit)="Login()" #loginForm="ngForm" novalidate>
     <input type="text" placeholder="Username" name="username" [(ngModel)]="Username" required>
     <input type="password" placeholder="Password" name="password" [(ngModel)]="Password" required>
     <select name="userrole" class="dropdown" [(ngModel)]="Userrole" required>
-      <option value="" disabled>Select a role</option>
+      <option value="" disabled [selected]>Select a role</option>
       <option value="customer">Customer</option>
       <option value="executive">Executive</option>
       <option value="technician">Technician</option>

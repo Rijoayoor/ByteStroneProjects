@@ -108,6 +108,10 @@ export class ApiService {
     return this.Http.put(`http://localhost:5087/api/technician/${roleId}/customer/${customerId}`, e)
 
   }
+  Executiveviewtechnician() {
+    return this.Http.get(`http://localhost:5087/api/technician`)
+  }
+
 
   IsLoggedIn() {
 
