@@ -3,19 +3,32 @@
   <title>Login Page</title>
 
 </head>
+<div class="heading">
+  <h1>ByteWheels </h1>
 
+
+</div>
+<div class="heading1">
+  <h4>Where Efficiency Meets Convenience....</h4>
+</div>
 <div class="container">
-  <h1 class="heading">Service Station Booking System</h1>
-  <h1>Login</h1>
-  <form (ngSubmit)="Login()" #loginForm="ngForm" novalidate>
-    <input type="text" placeholder="Username" name="username" [(ngModel)]="Username" required>
-    <input type="password" placeholder="Password" name="password" [(ngModel)]="Password" required>
-    <select name="userrole" class="dropdown" [(ngModel)]="Userrole" required>
-      <option value="" disabled [selected]>Select a role</option>
-      <option value="customer">Customer</option>
-      <option value="executive">Executive</option>
-      <option value="technician">Technician</option>
-    </select>
-    <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
-  </form>
+  <div class="loginForm">
+
+
+    <!-- <h1>Login</h1> -->
+    <form (ngSubmit)="Login()" #loginForm="ngForm" novalidate>
+      <input type="text" placeholder="Username" name="username" [(ngModel)]="Username" required>
+      <input type="password" placeholder="Password" name="password" [(ngModel)]="Password" required>
+      <select name="userrole" class="dropdown" [(ngModel)]="Userrole" required>
+
+        <option value="" selected>Select a role</option>
+        <option value="customer">Customer</option>
+        <option value="executive">Executive</option>
+        <option value="technician">Technician</option>
+
+      </select>
+      <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
+
+    </form>
+  </div>
 </div>

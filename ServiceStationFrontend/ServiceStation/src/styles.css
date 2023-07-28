@@ -32,7 +32,10 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	background-color: rgb(159, 205, 233);
-	/* background-image: url("C:\Users\RijoThomas(Intern)\Desktop\set-of-car-service-station-vector-16117897.jpg"); */
+	/* background-image: url("\assets\car-repair-garage-service-station-with-softfocus-light-background_41050-7099.avif"); */
+	background-image: url("\assets\4k-silver-car-next-to-building-1gd91djt8etqznsa.jpg");
+	background-size: cover;
+	
 }
 ol, ul {
 	list-style: none;

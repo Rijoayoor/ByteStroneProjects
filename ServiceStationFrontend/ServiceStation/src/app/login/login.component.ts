@@ -19,7 +19,7 @@ export class LoginComponent {
   role: string = ""
   roleId!: number
 
-
+  
   constructor(private service: ApiService, private route: Router) { }
 
 

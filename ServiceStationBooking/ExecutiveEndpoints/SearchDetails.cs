@@ -28,7 +28,7 @@ public class SearchDetailsEndpoint : EndpointWithoutRequest<dynamic[]>
         var result = (from booking in _context.Bookings
                       join customer in _context.Customers
                       on booking.CustomerId equals customer.CustomerId
-                      where (customer.CustomerName == name
+                      where (customer.CustomerName.Contains(name)
                       || booking.BookingDate == convertedDate
                       || customer.Email == email
                       || customer.VehicleModel == vehiclemodel
