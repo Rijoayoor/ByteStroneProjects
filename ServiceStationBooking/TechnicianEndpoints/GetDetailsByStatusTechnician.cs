@@ -19,12 +19,12 @@ public class GetDetailsByStatusTechnicianEndpoint : EndpointWithoutRequest<dynam
         int technicianId = Route<int>("technicianId");
         var result = (from booking in _context.Bookings
                       join customer in _context.Customers
-                      on booking.CustomerId equals customer.CustomerId
+                      on booking.BookingId equals customer.BookingId
                       where booking.TechnicianId == technicianId
-                        && 
+                        &&
                         (booking.Status == "new"
                         || booking.Status == "In progress"
-                        // || booking.Status == "completed"
+                        || booking.Status == "Assigned"
                         // || booking.Status == "Cancelled"
                         )
                       select new
@@ -35,9 +35,10 @@ public class GetDetailsByStatusTechnicianEndpoint : EndpointWithoutRequest<dynam
                           customer.ContactNumber,
                           customer.ServiceRequirements,
                           customer.CustomerName,
+                          booking.ExpectedCompletionDate,
                           booking.Status
                       }).ToArray();
-          var result1=result.FirstOrDefault();
+        var result1 = result.FirstOrDefault();
 
         if (result1 == null)
         {

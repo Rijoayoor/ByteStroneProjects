@@ -14,12 +14,29 @@ export class TechnicianComponent {
   changeStatus=false
   ViewBooking = "ViewBooking"
   ChangeStatus = "changeStatus"
+  data: any
+  roleId = this.service.roleIdGetter()
 
   
   constructor(private service:ApiService,private route: Router){}
+  countUpdated:number=0;
   ngOnInit(){
    this.name=this.service.nameGetter()
     this.role=this.service.roleGetter()
+    this.service.viewbookingtechnician(this.roleId).subscribe(res => {
+      this.data = res
+      console.log(this.data);
+      
+      let alertShown = false;
+
+      this.data.forEach((technicianDetails: { status: any; }) => {
+        if (technicianDetails.status == "In progress"||"Assigned" ) {
+          // alert("You have pending Jobs!!!");
+          this.countUpdated++;
+          // alertShown = true;
+        }
+      });
+    })
   }
   logout() {
     sessionStorage.removeItem("username");

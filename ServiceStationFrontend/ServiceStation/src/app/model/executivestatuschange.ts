@@ -4,9 +4,12 @@ export class Executivestatuschange {
     customerName!: string;
 
     contactNumber!: string
+    bookingDate!:Date
+    bookingId!:number
 
     serviceRequirements!: string
     status!: string
+    technicianName!:string
     serviceId!:number
 
 }

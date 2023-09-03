@@ -17,27 +17,32 @@ public class GetDetailsByStatusEndpoint : EndpointWithoutRequest<dynamic[]>
     public override async Task HandleAsync(CancellationToken ct)
     {
         int executiveId = Route<int>("executiveId");
+
+
+
         var result = (from booking in _context.Bookings
                       join customer in _context.Customers
-                      on booking.CustomerId equals customer.CustomerId
-                      where booking.ExecutiveId == executiveId
-                        && 
-                        (booking.Status == "new"
-                        || booking.Status == "In progress"
-                        // || booking.Status == "completed"
-                        // || booking.Status == "Cancelled"
-                        )
+                      on booking.BookingId equals customer.BookingId into customerGroup
+                      from customer in customerGroup.DefaultIfEmpty()
+                      join serviceTechnician in _context.ServiceTechnicians
+                      on booking.TechnicianId equals serviceTechnician.TechnicianId into technicianGroup
+                      from technician in technicianGroup.DefaultIfEmpty()
+                      where booking.ExecutiveId == executiveId &&
+                            (booking.Status == "new" || booking.Status == "In progress" || booking.Status == "Assigned")
+                      orderby booking.BookingDate descending
                       select new
                       {
                           booking.BookingId,
                           booking.BookingDate,
-                          booking.CustomerId,
+                        //   booking.CustomerId,
                           customer.ContactNumber,
                           customer.ServiceRequirements,
                           customer.CustomerName,
+                          technician.TechnicianName,
+                          booking.ExecutiveId,
                           booking.Status
                       }).ToArray();
-          var result1=result.FirstOrDefault();
+        var result1 = result.FirstOrDefault();
 
         if (result1 == null)
         {

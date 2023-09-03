@@ -32,6 +32,8 @@ export class TechnicianstatusupdateComponent {
 ngOnInit(){
   this.service.changestatustechnician(this.roleId).subscribe(res=>{
     this.data=res
+    console.log(this.data);
+    
    
    
   })

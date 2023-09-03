@@ -4,6 +4,7 @@ export class Technicianbooking {
     customerName!:string;
 
     contactNumber!:string
+    expectedCompletionDate!:Date
 
     serviceRequirements!:string
 }

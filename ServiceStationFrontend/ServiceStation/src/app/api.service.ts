@@ -10,6 +10,8 @@ import { Executivestatuschange } from './model/executivestatuschange';
 import { AssignJobs } from './model/assignjob';
 import { Technicianbooking } from './model/technicianbooking';
 import { Technicianstatuschange } from './model/technicianstatuschange';
+import { Customerviewbooking } from './model/customerviewbooking';
+import { Customerupdatedetails } from './model/customerupdatedetails';
 
 @Injectable({
   providedIn: 'root'
@@ -28,21 +30,21 @@ export class ApiService {
     return this.Http.post(" http://localhost:5087/api/login", { Username, Password, Userrole })
   }
   nameSetter(name: string) {
-    localStorage.setItem("name",name);
+    localStorage.setItem("name", name);
     //this.name = name
   }
   nameGetter() {
 
-    this.name=localStorage.getItem("name") || " ";
+    this.name = localStorage.getItem("name") || " ";
     return this.name
   }
 
   roleSetter(role: string) {
-    localStorage.setItem("role",role);
+    localStorage.setItem("role", role);
     // this.role = role
   }
   roleGetter() {
-    this.role=localStorage.getItem("role") || " ";
+    this.role = localStorage.getItem("role") || " ";
     return this.role
   }
 
@@ -62,12 +64,12 @@ export class ApiService {
     return this.customerId
   }
   roleIdSetter(roleId: number) {
-    localStorage.setItem("roleId",JSON.stringify(roleId));
+    localStorage.setItem("roleId", JSON.stringify(roleId));
     this.roleId = roleId
   }
   roleIdGetter() {
-   
-    this.roleId=JSON.parse(localStorage.getItem("roleId") as "4")
+
+    this.roleId = JSON.parse(localStorage.getItem("roleId") as "4")
     return this.roleId
   }
 
@@ -78,7 +80,7 @@ export class ApiService {
     return this.Http.get<Executivestatuschange>(`http://localhost:5087/api/detailsstatus/${roleId}`)
   }
   updatestatus(roleId: number, customerId: number, e: Executivestatuschange) {
-    return this.Http.put(`http://localhost:5087/api/executive/${roleId}/customer/${customerId}`, e)
+    return this.Http.put(`http://localhost:5087/api/executive/${roleId}/bookings/${customerId}`, e)
 
   }
   searchRequest(searchCriteria1: any, searchCriteria2: any, searchCriteria3: any, searchCriteria4: any, searchCriteria5: any, roleId: number) {
@@ -96,6 +98,11 @@ export class ApiService {
     return this.Http.put(`http://localhost:5087/api/executive/${roleId}/booking/${bookingId}`, assign)
 
   }
+  updateRequirement(roleId: number, customerId: number, assign: AssignJobs) {
+    return this.Http.put(`http://localhost:5087/api/customer/${customerId}`, assign)
+
+  }
+
   viewbookingtechnician(roleId: any) {
     return this.Http.get<Technicianbooking>(`http://localhost:5087/api/technician/${this.roleId}`)
   }
@@ -118,6 +125,15 @@ export class ApiService {
     return sessionStorage.getItem("username") != null
 
   }
+  viewbookingcustomer(roleId: any) {
+    return this.Http.get<Customerviewbooking>(`http://localhost:5087/api/customers/${this.roleId}`)
+  }
+  updateCustomer(roleId: any, c: Customer) {
+    return this.Http.put(`http://localhost:5087/api/customer/${this.roleId}`, c)
+  }
 
+  CustomerViewBooking() {
+    return this.Http.get(`http://localhost:5087/api/bookings`)
+  }
 
 }

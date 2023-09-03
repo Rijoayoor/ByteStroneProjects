@@ -1,5 +1,5 @@
 export class Booking {
-    serviceId!: number;
+  bookingId!: number;
   bookingDate!: Date;
-  public customerId!:number;
+  public customerId!: number;
 }

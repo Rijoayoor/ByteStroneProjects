@@ -389,3 +389,28 @@
         // var executive=(from booking in _context.Bookings
         // join customer in _context.Customers
         // on booking.CustomerId)
+
+
+// var result = (from booking in _context.Bookings
+        //               join customer in _context.Customers
+        //               on booking.CustomerId equals customer.CustomerId
+        //               join ServiceTechnician in _context.ServiceTechnicians
+        //               on booking.TechnicianId equals ServiceTechnician.TechnicianId
+        //               where booking.ExecutiveId == executiveId
+        //                 &&
+        //                 (booking.Status == "new"
+        //                 || booking.Status == "In progress"
+        //                 // || booking.Status == "completed"
+        //                 // || booking.Status == "Cancelled"
+        //                 )
+        //               select new
+        //               {
+        //                   booking.BookingId,
+        //                   booking.BookingDate,
+        //                   booking.CustomerId,
+        //                   customer.ContactNumber,
+        //                   customer.ServiceRequirements,
+        //                   customer.CustomerName,
+        //                   ServiceTechnician.TechnicianName,
+        //                   booking.Status
+        //               }).ToArray();

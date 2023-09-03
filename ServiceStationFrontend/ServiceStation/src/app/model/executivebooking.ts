@@ -4,6 +4,8 @@ export class Executivebooking {
     customerName!:string;
 
     contactNumber!:string
+    completionaDate!:Date
 
     serviceRequirements!:string
+    technicianName!:string
 }

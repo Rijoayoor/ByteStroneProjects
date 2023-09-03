@@ -22,7 +22,7 @@ export class ExecutivesearchComponent {
 
   tableSize: number = 10;
 
-  viewSearchResult = false
+  viewSearchResult = true
   roleId = this.service.roleIdGetter()
   constructor(private service: ApiService) {
 

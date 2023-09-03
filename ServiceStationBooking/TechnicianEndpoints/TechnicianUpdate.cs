@@ -8,7 +8,7 @@ public class TechnicianUpdateEnpoint : Endpoint<Booking>
     private readonly ServiceContext _context;
     public override void Configure()
     {
-        Put("/api/technician/{technicianId}/customer/{customerId}");
+        Put("/api/technician/{technicianId}/booking/{bookingId}");
         AllowAnonymous();
     }
     public TechnicianUpdateEnpoint(ServiceContext context)
@@ -20,9 +20,9 @@ public class TechnicianUpdateEnpoint : Endpoint<Booking>
 
 
         var technicianId = Route<int>("technicianId");
-        var customerId = Route<int>("customerId");
+        var bookingId = Route<int>("bookingId");
 
-        var booking = await _context.Bookings.FirstOrDefaultAsync(s => s.CustomerId == customerId && s.TechnicianId == technicianId);
+        var booking = await _context.Bookings.FirstOrDefaultAsync(s => s.BookingId == bookingId && s.TechnicianId == technicianId);
 
         if (booking == null)
         {
@@ -35,6 +35,7 @@ public class TechnicianUpdateEnpoint : Endpoint<Booking>
         var selectedTechnicians = sortedTechnicians.First();
         // booking.TechnicianId = selectedTechnicians.TechnicianId;
         booking.Status = req.Status;
+        booking.CompletionDate=req.CompletionDate;
 
         await _context.SaveChangesAsync();
         CountTechnicianJob.updatecounttechnician(selectedTechnicians.TechnicianId, _context);

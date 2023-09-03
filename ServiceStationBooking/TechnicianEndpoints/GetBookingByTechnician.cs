@@ -21,14 +21,16 @@ public class GetBookingTechnicianEndpoint : EndpointWithoutRequest<dynamic[]>
 
         var result = (from booking in _context.Bookings
                       join customer in _context.Customers
-                      on booking.CustomerId equals customer.CustomerId
+                      on booking.BookingId equals customer.BookingId
                       where booking.TechnicianId == id
                         &&
                         (booking.Status == "new"
                         || booking.Status == "In progress"
                         || booking.Status == "completed"
+                        || booking.Status == "Assigned"
                         // || booking.Status == "Cancelled"
                         )
+                      orderby booking.BookingDate descending
                       select new
                       {
                           booking.BookingId,
@@ -38,7 +40,9 @@ public class GetBookingTechnicianEndpoint : EndpointWithoutRequest<dynamic[]>
                           customer.ServiceRequirements,
                           customer.CustomerName,
                           booking.Status,
-                          booking.TechnicianId
+                          booking.TechnicianId,
+                          booking.ExpectedCompletionDate,
+                          booking.CompletionDate
                       }).ToArray();
         if (result.Length == 0)
             // if (result == null)

@@ -5,7 +5,7 @@ namespace Model;
 
 public partial class Customer
 {
-    public int CustomerId { get; set; }
+    public int Id { get; set; }
 
     public string CustomerName { get; set; } = null!;
 
@@ -21,5 +21,9 @@ public partial class Customer
 
     public string ServiceRequirements { get; set; } = null!;
 
-    public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+    public int CustomerId { get; set; }
+
+    public int? BookingId { get; set; }
+
+    public virtual Booking? Booking { get; set; }
 }

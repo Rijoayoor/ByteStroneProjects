@@ -6,4 +6,6 @@ export class Customer {
     public vehicleNumber!: string;
     public vehicleModel!: string;
     public serviceRequirements!: string;
+    public customerId!:number;
+    public bookingId!:number;
 }

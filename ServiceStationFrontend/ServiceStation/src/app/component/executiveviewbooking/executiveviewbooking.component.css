@@ -1,32 +1,183 @@
-/* Add some padding to the table */
+/* 
 table {
     width: 100%;
     border-collapse: collapse;
     padding: 10px;
   }
-  /* Style the table header */
+
   thead {
-    background-color: #f0f0f0;
+    background-color: #38e850;
   }
   thead th {
     padding: 10px;
     font-weight: bold;
-    text-align: left;
+    text-align:center;
+    background-color: #87f195;
+    border: 2px solid #343232;
   }
-  /* Alternate row background color for better readability */
   tbody tr:nth-child(even) {
     background-color: #f9f9f9;
   }
-  /* Style the table cells */
+  
   td {
     padding: 10px;
-    border: 1px solid #ccc;
+    text-align:center;
+    border: 2px solid #343232;
   }
-  /* Highlight the table cells on hover */
+ 
   tbody tr:hover {
     background-color: #eaf5ff;
   }
-  /* Add some spacing between the table cells */
+  
   td {
     padding: 10px;
   }
+
+
+
+  
+.pagination-controls {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-controls button {
+    padding: 6px 12px;
+    margin: 0 3px;
+    background-color: #007bff;
+    color: #fff;
+    border:none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination-controls button:hover {
+    background-color: #0056b3;
+}
+
+.pagination-controls button.disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+
+ */
+
+
+ /* Custom CSS for the table */
+/* .container {
+  margin: 20px auto;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table th {
+  background-color: #343a40;
+  color: white;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+.pagination {
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.pagination-controls {
+  color: yellow;
+  cursor: pointer;
+} */
+
+/* Apply general styles to the table */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #010b15;
+}
+
+/* Stripe rows with alternating colors */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Style pagination controls */
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+/* Customize pagination styles */
+.pagination {
+  display: inline-flex;
+  padding-left: 0;
+  margin-top: 0;
+  border-radius: 0.25rem;
+}
+
+.page-item {
+  display: inline;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #032343;
+}
+
+.page-link {
+  color: #007bff;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+
+.page-link:hover {
+  color: #0056b3;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Customize table header */
+.table th {
+  background-color: #0d65bd;
+  border-bottom: 2px solid #dee2e6;
+}
+
+

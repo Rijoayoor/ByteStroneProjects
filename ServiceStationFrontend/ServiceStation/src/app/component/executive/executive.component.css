@@ -1,10 +1,11 @@
 .nav {
     width: 100vw;
-    height: 15vh;
-    background-color: rgb(79, 144, 105);
+    height: 10vh;
+    background-color: rgb(17, 17, 17);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    opacity: 0.8;
     /* padding:0 3% 0 3%; */
     /* padding-right: 3%; */
 }
@@ -46,22 +47,24 @@ h3 {
 .side-nav {
     width: 20vw;
     height: 83vh;
-    background-color: rgb(112, 187, 127);
-    border-top: 10px solid white;
+    background-color:transparent;
+    /* border-top: 10px solid white; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    
 
 }
 
 .side-nav>button {
-    width: 60%;
+    width: 70%;
     height: 10%;
     border-radius: .7rem;
     font-weight: 700;
     font-size: 1.4rem;
     transition: all .4s ease;
+    opacity: 1;
 
 }
 
@@ -91,3 +94,10 @@ h3 {
     height: 80vh;
     /* background-color: brown; */
 }
+
+.capitalize{
+    text-transform: uppercase;
+  }
+  .margin-left {
+    margin-right: 45%;
+  }

@@ -36,7 +36,7 @@ ngOnInit(){
   this.service.changestatusexecutive(this.roleId).subscribe(res=>{
     this.data=res
     // this.data.map((el:any)=>{
-    //   console.log(this.data);
+      console.log(this.data);
     //   el.status
       
     // })
@@ -45,7 +45,7 @@ ngOnInit(){
   
 }
  
-update(customerId:number,e:Executivestatuschange){
+update(bookingId:number,e:Executivestatuschange){
   // if(e.status==="Cancelled"){
   //   alert("cant update")
   // }
@@ -53,7 +53,7 @@ update(customerId:number,e:Executivestatuschange){
   
   // else{
   
-  this.service.updatestatus(this.roleId,customerId,e).subscribe(res=>{
+  this.service.updatestatus(this.roleId,bookingId,e).subscribe(res=>{
     alert("Updated !!")
    
     

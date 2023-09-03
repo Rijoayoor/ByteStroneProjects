@@ -16,10 +16,10 @@ public class AssignJobEnpoint : Endpoint<Booking>
     }
     public override async Task HandleAsync(Booking req, CancellationToken ct)
     {
-        string status1="In progress";
+
         var executiveId = Route<int>("executiveId");
         var bookingId = Route<int>("bookingId");
-       
+
 
         var booking = await _context.Bookings.FirstOrDefaultAsync(s => s.BookingId == bookingId && s.ExecutiveId == executiveId);
 
@@ -31,16 +31,17 @@ public class AssignJobEnpoint : Endpoint<Booking>
 
         booking.TechnicianId = req.TechnicianId;
         // booking.Status = req.Status;
-        booking.Status=status1;
+        booking.Status = "Assigned";
+        booking.ExpectedCompletionDate = req.ExpectedCompletionDate;
 
-         var technicians=_context.ServiceTechnicians.ToList();
-        var sortedTechnicians=technicians.OrderBy(e=>e.Count);
-        var selectedTechnicians=sortedTechnicians.First();
-        req.TechnicianId=selectedTechnicians.TechnicianId;
+        var technicians = _context.ServiceTechnicians.ToList();
+        var sortedTechnicians = technicians.OrderBy(e => e.Count);
+        var selectedTechnicians = sortedTechnicians.First();
+        req.TechnicianId = selectedTechnicians.TechnicianId;
 
         await _context.SaveChangesAsync();
-        CountTechnicianJob.updatecounttechnician(selectedTechnicians.TechnicianId,_context);
-        
+        CountTechnicianJob.updatecounttechnician(selectedTechnicians.TechnicianId, _context);
+
 
         await SendAsync(booking);
     }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -20,6 +20,7 @@ import { ExecutivejobassignComponent } from './component/executivejobassign/exec
 import { TechnicianviewjobComponent } from './component/technicianviewjob/technicianviewjob.component';
 import { TechnicianstatusupdateComponent } from './component/technicianstatusupdate/technicianstatusupdate.component';
 import { ExecutiveviewtechniciansComponent } from './component/executiveviewtechnicians/executiveviewtechnicians.component';
+import { CustomerviewbookingComponent } from './component/customerviewbooking/customerviewbooking.component';
 
 
 
@@ -39,14 +40,16 @@ import { ExecutiveviewtechniciansComponent } from './component/executiveviewtech
     ExecutivejobassignComponent,
     TechnicianviewjobComponent,
     TechnicianstatusupdateComponent,
-    ExecutiveviewtechniciansComponent
+    ExecutiveviewtechniciansComponent,
+    CustomerviewbookingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

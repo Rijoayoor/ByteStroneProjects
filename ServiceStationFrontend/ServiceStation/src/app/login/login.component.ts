@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
 import { compileNgModule } from '@angular/compiler';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -19,14 +20,32 @@ export class LoginComponent {
   role: string = ""
   roleId!: number
 
+  loginForm1:FormGroup;
   
-  constructor(private service: ApiService, private route: Router) { }
+  constructor(private service: ApiService, private route: Router) {
 
+    this.loginForm1 = new FormGroup({
+      userName: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+      role: new FormControl('', [Validators.required])
+    });
+  
+   }
+  ngOnInit(){
+    sessionStorage.clear();
+  }
 
+  
 
   Login() {
-
-    this.service.login(this.Username, this.Password, this.Userrole).subscribe(res => {
+  this.Username=this.loginForm1.get('userName')?.value.trim();
+  this.Password=this.loginForm1.get('password')?.value.trim();
+  this.Userrole=this.loginForm1.get('role')?.value;
+  console.log(this.Username);
+  console.log(this.Password);
+  
+  
+  this.service.login(this.Username, this.Password, this.Userrole).subscribe(res => {
       if (res != null) {
         console.log(this.Username, this.Password, this.Userrole)
         this.data = res
@@ -42,7 +61,7 @@ export class LoginComponent {
         console.log(this.data.roleId)
         sessionStorage.setItem("username", this.data.username)
         this.route.navigate([this.data.userrole])
-        alert("Login successfull!")
+        // alert("Login successfull!")
       }
       else {
         alert("Invalid Login")

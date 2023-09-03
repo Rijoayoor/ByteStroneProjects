@@ -1,4 +1,5 @@
-<div class="nav">
+<!-- <div class="nav">
+    
     <h1 class="brand">Hi, {{name}}</h1>
     <h1 class="brand"> {{role}}</h1>
     <button class="log-out" (click)="logout()">Logout</button>
@@ -6,8 +7,8 @@
 <div class="main">
 
     <div class="side-nav">
-        <button (click)="customerdetails()">Customer Details</button>
-        <!-- <button (click)="bookingdetails()">Book Service</button> -->
+        <button (click)="customerdetails()">Book Service</button>
+        <button (click)="bookingdetails()">Booking details</button>
 
 
     </div>
@@ -15,7 +16,28 @@
         <app-customerhome></app-customerhome>
     </div>
     
-    <!-- <div class="content" *ngIf="bookingFormsOns">
-        <app-customerbooking></app-customerbooking>
-    </div> -->
+    <div class="content" *ngIf="bookingFormsOns">
+        <app-customerviewbooking></app-customerviewbooking>
+    </div>
+
+   
+</div> -->
+
+<div class="nav">
+    <h1 class="brand">Hi, <span class="capitalize">{{name}}</span></h1>
+    <h1 class="brand margin-left"><span class="capitalize">{{role}}</span></h1>
+    
+</div>
+<div class="main">
+    <div class="side-nav">
+        <button (click)="customerdetails()">Book Service</button>
+        <button (click)="bookingdetails()">Booking details</button>
+        <button class="log-out" (click)="logout()">Logout</button>
+    </div>
+    <div class="content" *ngIf="custumerOns">
+        <app-customerhome></app-customerhome>
+    </div>
+    <div class="content" *ngIf="bookingFormsOns">
+        <app-customerviewbooking></app-customerviewbooking>
+    </div>
 </div>

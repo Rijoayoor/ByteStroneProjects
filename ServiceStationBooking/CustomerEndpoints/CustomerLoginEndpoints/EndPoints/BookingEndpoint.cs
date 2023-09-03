@@ -2,7 +2,7 @@ using FastEndpoints;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Model;
-public class BookingEnpoint : Endpoint<Booking>
+public class BookingEndpoint : Endpoint<Booking>
 {
     private readonly ServiceContext _context;
     public override void Configure()
@@ -10,7 +10,7 @@ public class BookingEnpoint : Endpoint<Booking>
         Post("/api/booking");
         AllowAnonymous();
     }
-    public BookingEnpoint(ServiceContext context)
+    public BookingEndpoint(ServiceContext context)
     {
         _context = context;
     }
@@ -20,7 +20,6 @@ public class BookingEnpoint : Endpoint<Booking>
         var sortedExecutives = executives.OrderBy(e => e.Count);
         var selectedExecutives = sortedExecutives.First();
         booking.ExecutiveId = selectedExecutives.ExecutiveId;
-        System.Console.WriteLine(booking);
         _context.Bookings.Add(booking);
         await _context.SaveChangesAsync();
         Count.updatecount(selectedExecutives.ExecutiveId, _context);

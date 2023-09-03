@@ -17,7 +17,11 @@ public partial class Booking
 
     public int? TechnicianId { get; set; }
 
-    public virtual Customer Customer { get; set; } = null!;
+    public DateOnly? ExpectedCompletionDate { get; set; }
+
+    public DateOnly? CompletionDate { get; set; }
+
+    public virtual ICollection<Customer> Customers { get; set; } = new List<Customer>();
 
     public virtual ServiceExecutive? Executive { get; set; }
 

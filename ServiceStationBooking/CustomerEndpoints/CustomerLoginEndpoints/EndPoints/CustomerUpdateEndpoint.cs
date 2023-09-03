@@ -1,5 +1,5 @@
 using FastEndpoints;
-using FluentValidation;
+// using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Model;
 
@@ -17,20 +17,24 @@ public class CustomerUpdateEnpoint : Endpoint<Customer>
     }
     public override async Task HandleAsync(Customer req, CancellationToken ct)
     {
+
         var id = Route<int>("id");
-        var customer = _context.Customers.Where(s => s.CustomerId == id).FirstOrDefault();
+        var customer = _context.Customers.Where(s => s.BookingId == id).FirstOrDefault();
         if (customer == null)
         {
             await SendNotFoundAsync();
         }
-        customer.CustomerName = req.CustomerName;
-        customer.ContactNumber = req.ContactNumber;
-        customer.Email = req.Email;
-        customer.Address = req.Address;
-        customer.VehicleNumber = req.VehicleNumber;
-        customer.VehicleModel = req.VehicleModel;
+        // customer.CustomerName = req.CustomerName;
+        // customer.ContactNumber = req.ContactNumber;
+        // customer.Email = req.Email;
+        // customer.Address = req.Address;
+        // customer.VehicleNumber = req.VehicleNumber;
+        // customer.VehicleModel = req.VehicleModel;
         customer.ServiceRequirements = req.ServiceRequirements;
+
         await _context.SaveChangesAsync();
+
+        System.Console.WriteLine(customer);
         await SendAsync(customer);
     }
 }

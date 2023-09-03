@@ -32,14 +32,14 @@ export class TechnicianviewjobComponent {
   ngOnInit() {
     this.service.viewbookingtechnician(this.roleId).subscribe(res => {
       this.data = res
-      let alertShown = false;
+      // let alertShown = false;
 
-      this.data.forEach((technicianDetails: { status: any; }) => {
-        if (technicianDetails.status == "In progress" && !alertShown) {
-          alert("You have pending Jobs!!!");
-          alertShown = true;
-        }
-      });
+      // this.data.forEach((technicianDetails: { status: any; }) => {
+      //   if (technicianDetails.status == "In progress" && !alertShown) {
+      //     alert("You have pending Jobs!!!");
+      //     alertShown = true;
+      //   }
+      // });
     })
   }
 

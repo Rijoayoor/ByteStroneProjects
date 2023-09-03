@@ -36,7 +36,7 @@ details:any
     if (form.valid) {
       let booking: Booking = new Booking();
 
-      booking.serviceId=this.serviceId,
+      // booking.serviceId=this.serviceId,
       booking.bookingDate=this.bookingDate,
       booking.customerId=this.service.customerIdGetter()
 

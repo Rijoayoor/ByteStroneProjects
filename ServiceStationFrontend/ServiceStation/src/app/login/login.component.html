@@ -11,12 +11,43 @@
 <div class="heading1">
   <h4>Where Efficiency Meets Convenience....</h4>
 </div>
-<div class="container">
-  <div class="loginForm">
+<div class="container"> 
+   <div class="loginForm">
+    <form  [formGroup]="loginForm1" (ngSubmit)="Login()">
+      <label for="userName" style="color: white;">Enter The User Name</label>
+      <input type="text" class="form-control" id="userName"  placeholder="Enter Your Username"formControlName="userName">
+      <div *ngIf="loginForm1.get('userName')?.invalid && loginForm1.get('userName')?.touched" style="color: red;">
+        Username is required.
+      </div>
+    
+      <label for="password" style="color: white;">Enter The Password :</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter Your Password" formControlName="password">
+      <div *ngIf="loginForm1.get('password')?.invalid && loginForm1.get('password')?.touched" style="color: red;">
+        Password is required.
+      </div>
+    
+      <label for="" style="color: white;">Select The Role :</label>
+      <select name="role" id="cars" formControlName="role" class="form-control" placeholder="Specify The Role Here">
+        <option value="" disabled selected>Specify The Role Here :</option>
+        <option value="customer">Customer</option>
+        <option value="executive">Executive</option>
+        <option value="technician">Technician</option>
+      </select>
+      <div *ngIf="loginForm1.get('role')?.invalid && loginForm1.get('role')?.touched" style="color: red;">
+        Role is required.
+      </div>
+    
+      <button class="btn btn-primary mt-3 d-block mx-auto" [disabled]="loginForm1.invalid">Submit</button>
+    </form>
 
 
-    <!-- <h1>Login</h1> -->
-    <form (ngSubmit)="Login()" #loginForm="ngForm" novalidate>
+
+  </div> 
+</div>
+
+
+ <!-- <h1>Login</h1> -->
+    <!-- <form (ngSubmit)="Login()" #loginForm="ngForm" novalidate>
       <input type="text" placeholder="Username" name="username" [(ngModel)]="Username" required>
       <input type="password" placeholder="Password" name="password" [(ngModel)]="Password" required>
       <select name="userrole" class="dropdown" [(ngModel)]="Userrole" required>
@@ -28,7 +59,4 @@
 
       </select>
       <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
-
-    </form>
-  </div>
-</div>
+    </form> -->

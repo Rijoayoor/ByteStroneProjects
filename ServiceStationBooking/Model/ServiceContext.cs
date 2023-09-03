@@ -41,20 +41,17 @@ public partial class ServiceContext : DbContext
 
             entity.Property(e => e.BookingId).HasColumnName("booking_id");
             entity.Property(e => e.BookingDate).HasColumnName("booking_date");
+            entity.Property(e => e.CompletionDate).HasColumnName("completion_date");
             entity.Property(e => e.CustomerId)
                 .ValueGeneratedOnAdd()
                 .HasColumnName("customer_id");
             entity.Property(e => e.ExecutiveId).HasColumnName("executive_id");
+            entity.Property(e => e.ExpectedCompletionDate).HasColumnName("expected_completion_date");
             entity.Property(e => e.Status)
                 .HasMaxLength(20)
                 .HasDefaultValueSql("'new'::character varying")
                 .HasColumnName("status");
             entity.Property(e => e.TechnicianId).HasColumnName("technician_id");
-
-            entity.HasOne(d => d.Customer).WithMany(p => p.Bookings)
-                .HasForeignKey(d => d.CustomerId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("booking_customer_id_fkey");
 
             entity.HasOne(d => d.Executive).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.ExecutiveId)
@@ -67,17 +64,21 @@ public partial class ServiceContext : DbContext
 
         modelBuilder.Entity<Customer>(entity =>
         {
-            entity.HasKey(e => e.CustomerId).HasName("customer_pkey");
+            entity.HasKey(e => e.Id).HasName("customer_pkey");
 
             entity.ToTable("customer");
 
-            entity.Property(e => e.CustomerId).HasColumnName("customer_id");
+            entity.Property(e => e.Id)
+                .HasDefaultValueSql("nextval('customer_customer_id_seq'::regclass)")
+                .HasColumnName("id");
             entity.Property(e => e.Address)
                 .HasMaxLength(50)
                 .HasColumnName("address");
+            entity.Property(e => e.BookingId).HasColumnName("booking_id");
             entity.Property(e => e.ContactNumber)
                 .HasMaxLength(20)
                 .HasColumnName("contact_number");
+            entity.Property(e => e.CustomerId).HasColumnName("customer_id");
             entity.Property(e => e.CustomerName)
                 .HasMaxLength(20)
                 .HasColumnName("customer_name");
@@ -93,6 +94,10 @@ public partial class ServiceContext : DbContext
             entity.Property(e => e.VehicleNumber)
                 .HasMaxLength(20)
                 .HasColumnName("vehicle_number");
+
+            entity.HasOne(d => d.Booking).WithMany(p => p.Customers)
+                .HasForeignKey(d => d.BookingId)
+                .HasConstraintName("fk_booking_id");
         });
 
         modelBuilder.Entity<Login>(entity =>
@@ -108,7 +113,9 @@ public partial class ServiceContext : DbContext
             entity.Property(e => e.Password)
                 .HasMaxLength(20)
                 .HasColumnName("password");
-            entity.Property(e => e.RoleId).HasColumnName("role_id");
+            entity.Property(e => e.RoleId)
+                .HasDefaultValueSql("nextval('login_roleid_seq'::regclass)")
+                .HasColumnName("role_id");
             entity.Property(e => e.Username)
                 .HasMaxLength(20)
                 .HasColumnName("username");
@@ -174,6 +181,7 @@ public partial class ServiceContext : DbContext
                 .HasMaxLength(20)
                 .HasColumnName("technician_name");
         });
+        modelBuilder.HasSequence("login_roleid_seq").StartsAt(200L);
 
         OnModelCreatingPartial(modelBuilder);
     }
