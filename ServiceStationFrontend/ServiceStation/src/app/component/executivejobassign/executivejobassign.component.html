@@ -1,4 +1,3 @@
-
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -8,10 +7,9 @@
             <th>Service Requirements</th>
             <th>Booking Date</th>
             <th>Expected Completeion Date</th>
-            <th>Status</th>           
+            <th>Status</th>
             <th>Assigned to</th>
             <th>Technician Name</th>
-            
             <th></th>
         </tr>
     </thead>
@@ -24,37 +22,25 @@
             <td>{{ item.contactNumber }}</td>
             <td>
                 <input type="text" [(ngModel)]="item.serviceRequirements">
-                </td>
+            </td>
             <td>{{item.bookingDate}}</td>
-            <td >
+            <td>
                 <input type="date" [(ngModel)]="item.expectedCompletionDate" [min]="item.bookingDate">
             </td>
             <td>{{item.status}}</td>
             <td>{{item.technicianName}}</td>
             <td>
-                <!-- <select [(ngModel)]="item.technicianId">
-                    <option *ngFor="let technician of technicians" [value]="technician.technicianId">
-                        {{ technician.technicianName }}
-                    </option>
-                </select> -->
-                <!-- <select [(ngModel)]="item.technicianId">
-                    <ng-container *ngFor="let item of technicians">
-                        <option [value]="item.technicianId" 
-                                *ngIf="item.technicianName !== Assignedname">{{item.technicianName}}</option>
-                    </ng-container>
-                </select> -->
                 <select [(ngModel)]="item.technicianId">
                     <option *ngFor="let item of technicians" [value]="item.technicianId">{{item.technicianName}}
                     </option>
                 </select>
-
             </td>
-            <!-- <td>{{item.technicianId}}</td> -->
-            <td><button (click)="assign(item.bookingId,item.executiveId,item)" [disabled]="lengths==0" style="border-radius: 40px;">Assign</button></td>
+            <td><button (click)="assign(item.bookingId,item.executiveId,item)" [disabled]="lengths==0"
+                    style="border-radius: 40px;">Assign</button></td>
         </tr>
     </tbody>
-
 </table>
 <div class="d-flex justify-content-center align-items-center mt-4">
-    <pagination-controls style="color: yellow;" previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)"></pagination-controls>
-  </div>
+    <pagination-controls style="color: yellow;" previousLabel="Prev" nextLabel="Next"
+        (pageChange)="onTableDataChange($event)"></pagination-controls>
+</div>

@@ -1,5 +1,6 @@
 export class Technicianstatuschange {
     customerId!: number;
+    bookingId!:number;
 
     customerName!: string;
 

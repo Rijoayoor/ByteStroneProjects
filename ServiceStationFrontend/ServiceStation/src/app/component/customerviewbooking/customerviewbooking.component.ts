@@ -8,7 +8,6 @@ import { Customerviewbooking } from 'src/app/model/customerviewbooking';
   styleUrls: ['./customerviewbooking.component.css']
 })
 export class CustomerviewbookingComponent {
-  // data: Customerviewbooking= new Customerviewbooking();
   data:any
   roleId=this.service.roleIdGetter()
   constructor(private service: ApiService) { }

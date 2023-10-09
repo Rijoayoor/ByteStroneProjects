@@ -9,7 +9,6 @@ import { CustomerbookingComponent } from './component/customerbooking/customerbo
 import { ExecutiveviewbookingComponent } from './component/executiveviewbooking/executiveviewbooking.component';
 import { ExecutivechangestatusComponent } from './component/executivechangestatus/executivechangestatus.component';
 import { ExecutivesearchComponent } from './component/executivesearch/executivesearch.component';
-
 import { CustomerviewbookingComponent } from './component/customerviewbooking/customerviewbooking.component';
 import { authguardNewGuard } from './guard/authguard-new.guard';
 

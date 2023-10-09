@@ -1,0 +1,15 @@
+c:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Core\bin\Debug\net7.0\service.Core.deps.json
+C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Core\bin\Debug\net7.0\service.Core.dll
+C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Core\bin\Debug\net7.0\service.Core.pdb
+C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Core\bin\Debug\net7.0\service.SharedKernel.dll
+C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Core\bin\Debug\net7.0\service.SharedKernel.pdb
+C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Core\obj\Debug\net7.0\service.Core.csproj.AssemblyReference.cache
+C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Core\obj\Debug\net7.0\service.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Core\obj\Debug\net7.0\service.Core.AssemblyInfoInputs.cache
+C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Core\obj\Debug\net7.0\service.Core.AssemblyInfo.cs
+C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Core\obj\Debug\net7.0\service.Core.csproj.CoreCompileInputs.cache
+c:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Core\obj\Debug\net7.0\service.Core.csproj.CopyComplete
+C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Core\obj\Debug\net7.0\service.Core.dll
+C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Core\obj\Debug\net7.0\refint\service.Core.dll
+C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Core\obj\Debug\net7.0\service.Core.pdb
+c:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Core\obj\Debug\net7.0\ref\service.Core.dll

@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CustomerComponent } from './component/customer/customer.component';
 import { ExecutiveComponent } from './component/executive/executive.component';
 import { TechnicianComponent } from './component/technician/technician.component';
@@ -21,8 +21,6 @@ import { TechnicianviewjobComponent } from './component/technicianviewjob/techni
 import { TechnicianstatusupdateComponent } from './component/technicianstatusupdate/technicianstatusupdate.component';
 import { ExecutiveviewtechniciansComponent } from './component/executiveviewtechnicians/executiveviewtechnicians.component';
 import { CustomerviewbookingComponent } from './component/customerviewbooking/customerviewbooking.component';
-
-
 
 @NgModule({
   declarations: [

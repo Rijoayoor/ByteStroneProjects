@@ -1,25 +1,18 @@
 <div class="nav">
   <h1 class="brand">Hi, <span class="capitalize">{{name}}</span></h1>
   <h1 class="brand"><span class="capitalize">{{role}}</span></h1>
-  <button><i class="bi bi-bell"></i>{{countUpdated}}</button>
-   
-    
+  <button><i class="bi bi-bell"></i>{{countUpdated}}</button>    
 </div>
 <div class="main">
     <div class="side-nav">
         <button (click)="bookingdetailstechnician(ViewBooking)">VIEW BOOKING</button>
         <button (click)="bookingdetailstechnician(ChangeStatus)">UPDATE STATUS</button>
         <button class="log-out" (click)="logout()">LOGOUT</button>
-
-    </div>
-   
+    </div>  
         <div class="content" *ngIf="viewBookingtechnician">
             <app-technicianviewjob></app-technicianviewjob>
         </div>
-
         <div class="content" *ngIf="changeStatus">
             <app-technicianstatusupdate></app-technicianstatusupdate>
         </div>
-        
-
     </div>

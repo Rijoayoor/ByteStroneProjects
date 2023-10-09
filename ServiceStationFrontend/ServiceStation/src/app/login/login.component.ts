@@ -19,40 +19,30 @@ export class LoginComponent {
   name: string = ""
   role: string = ""
   roleId!: number
-
-  loginForm1:FormGroup;
-  
+  loginForm1: FormGroup;
   constructor(private service: ApiService, private route: Router) {
-
     this.loginForm1 = new FormGroup({
       userName: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
       role: new FormControl('', [Validators.required])
     });
-  
-   }
-  ngOnInit(){
+  }
+  ngOnInit() {
     sessionStorage.clear();
   }
-
-  
-
   Login() {
-  this.Username=this.loginForm1.get('userName')?.value.trim();
-  this.Password=this.loginForm1.get('password')?.value.trim();
-  this.Userrole=this.loginForm1.get('role')?.value;
-  console.log(this.Username);
-  console.log(this.Password);
-  
-  
-  this.service.login(this.Username, this.Password, this.Userrole).subscribe(res => {
+    this.Username = this.loginForm1.get('userName')?.value.trim();
+    this.Password = this.loginForm1.get('password')?.value.trim();
+    this.Userrole = this.loginForm1.get('role')?.value;
+    console.log(this.Username);
+    console.log(this.Password);
+    this.service.login(this.Username, this.Password, this.Userrole).subscribe(res => {
       if (res != null) {
         console.log(this.Username, this.Password, this.Userrole)
         this.data = res
         console.log(this.data)
         this.name = this.data.name
         this.role = this.data.userrole
-        
         this.roleId = this.data.roleId
         this.service.nameSetter(this.name);
         this.service.roleSetter(this.role);
@@ -66,8 +56,6 @@ export class LoginComponent {
       else {
         alert("Invalid Login")
       }
-
-
     })
   }
 }

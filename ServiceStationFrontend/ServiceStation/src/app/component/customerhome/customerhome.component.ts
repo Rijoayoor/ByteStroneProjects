@@ -22,15 +22,13 @@ export class CustomerhomeComponent {
   vehicleNumber!: string
   vehicleModel!: string
   serviceRequirements!: string
-
   serviceId!: number
   bookingDate!: Date
   // customerId!: number
   bookingId!: number
   bookingDateInput!: any
-data:any
+  data: any
   customerId = this.service.roleIdGetter()
-
   customerDetails: FormGroup;
 
 
@@ -52,15 +50,9 @@ data:any
     const today = new Date();
     this.minDate = today.toISOString().split('T')[0]; // Format: YYYY-MM-DD
     console.log(this.customerId);
-
   }
-
-
-  datalength:number=0;
+  datalength: number = 0;
   submitForm() {
-
-
-
 
     this.customerName = this.customerDetails.get('customerName')?.value;
     this.contactNumber = this.customerDetails.get('contactNumber')?.value;
@@ -71,14 +63,9 @@ data:any
     this.serviceRequirements = this.customerDetails.get('serviceRequirements')?.value;
     this.bookingDate = this.customerDetails.get('bookingDate')?.value;
 
-    console.log(this.bookingDate);
-
 
     let customer: Customer = new Customer();
     let booking: Booking = new Booking();
-
-
-
 
     customer.customerName = this.customerName,
       customer.contactNumber = this.contactNumber,
@@ -88,50 +75,25 @@ data:any
       customer.vehicleModel = this.vehicleModel,
       customer.serviceRequirements = this.serviceRequirements,
       customer.customerId = this.customerId,
-     
       booking.customerId = this.customerId,
-
-
       booking.bookingDate = this.bookingDate,
 
       this.service.customerDetails(customer).subscribe(res => {
-   
-      this.service.Bookingdetails(booking).subscribe((res: Bookingdetails) => {
 
-        this.service.CustomerViewBooking().subscribe(res=>{
-          this.data=res
-          this.datalength=this.data.length;
+        this.service.Bookingdetails(booking).subscribe((res: Bookingdetails) => {
 
-         
-        customer.bookingId = this.data[this.datalength-1].bookingId
-        console.log(customer.bookingId);
-        
-        console.log(this.data[this.datalength-1].bookingId);
-        this.service.customerDetails(customer).subscribe(res => {
+          this.service.CustomerViewBooking().subscribe(res => {
+            this.data = res
+            this.datalength = this.data.length;
+            customer.bookingId = this.data[this.datalength - 1].bookingId
+            console.log(customer.bookingId);
+            console.log(this.data[this.datalength - 1].bookingId);
+            this.service.customerDetails(customer).subscribe(res => {
+            })
+          })
         })
-        // this.service.updateCustomer(this.customerId,customer).subscribe((res) => {
-        //   console.log(res);
-          
-
-        // })
-
-        })
-        
-        // this.bookingId = res.bookingId;
-
-
-        })
-       
-        
-        
         alert("Your Booking date is " + booking.bookingDate)
         this.customerDetails.reset();
-
-
-
       })
-
-
-
   }
 }

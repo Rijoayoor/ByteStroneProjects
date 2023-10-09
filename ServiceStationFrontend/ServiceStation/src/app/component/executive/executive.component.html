@@ -1,7 +1,6 @@
 <div class="nav">
     <h1 class="brand">Hi, <span class="capitalize">{{name}}</span></h1>
-    <h1 class="brand margin-left"><span class="capitalize">{{role}}</span></h1>
-    
+    <h1 class="brand margin-left"><span class="capitalize">{{role}}</span></h1>   
 </div>
 <div class="main">
     <div class="side-nav">
@@ -25,9 +24,7 @@
     <div class="content" *ngIf="viewTechnicians">
         <app-executiveviewtechnicians></app-executiveviewtechnicians>
     </div>
-
     <div class="content" *ngIf="assignJob">
         <app-executivejobassign></app-executivejobassign>
     </div>
-
 </div>

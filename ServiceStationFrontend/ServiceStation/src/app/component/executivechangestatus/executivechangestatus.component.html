@@ -9,14 +9,11 @@
             <th>Booking Date</th>
             <th>Status</th>
             <th></th>
-
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let item of data  | paginate:{itemsPerPage:tableSize,
-
             currentPage:page,
-
         totalItems:count}; let i=index">
             <td>{{ (page - 1) * tableSize + i + 1 }}</td>
             <td>{{ item.customerName }}</td>
@@ -24,34 +21,18 @@
             <td>{{ item.serviceRequirements }}</td>
             <td>{{ item.technicianName }}</td>
             <td>{{ item.bookingDate }}</td>
-            <!-- <td><input type="text"  [(ngModel)]="item.status" /></td> -->
-
-
             <td>
-
                 <select [(ngModel)]="item.status">
-
-                        
-
-                        <option value="In progress">In progress</option>
-
+                    <option value="In progress">In progress</option>
                     <option value="completed">Completed</option>
-
                     <option value="Cancelled">Cancelled</option>
-
-
                 </select>
-
             </td>
             <td><button (click)="update(item.bookingId,item)" style="border-radius: 40px;">Update</button></td>
-
-            <!-- <td>
-                <button (click)="editItem()">Edit</button>
-            </td> -->
         </tr>
     </tbody>
-
 </table>
 <div class="d-flex justify-content-center align-items-center mt-4">
-    <pagination-controls style="color: yellow;" previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)"></pagination-controls>
-  </div>
+    <pagination-controls style="color: yellow;" previousLabel="Prev" nextLabel="Next"
+        (pageChange)="onTableDataChange($event)"></pagination-controls>
+</div>

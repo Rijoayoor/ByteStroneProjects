@@ -11,55 +11,28 @@ import { Executivestatuschange } from 'src/app/model/executivestatuschange';
 })
 export class ExecutivechangestatusComponent {
   name = ""
-  data:any
-  stat:any
-
-  POSTS:any;
-
-  page:number=1;
-
-  count:number=0;
-
-  tableSize:number=10;
-  
-  roleId=this.service.roleIdGetter()
-  customerId=this.service.customerIdGetter()
+  data: any
+  stat: any
+  POSTS: any;
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 10;
+  roleId = this.service.roleIdGetter()
+  customerId = this.service.customerIdGetter()
   constructor(private service: ApiService) { }
-  ex=Executivestatuschange
-
-  onTableDataChange(event:any){
-
-    this.page=event;    
-
+  ex = Executivestatuschange
+  onTableDataChange(event: any) {
+    this.page = event;
   }
-ngOnInit(){
-  this.service.changestatusexecutive(this.roleId).subscribe(res=>{
-    this.data=res
-    // this.data.map((el:any)=>{
+  ngOnInit() {
+    this.service.changestatusexecutive(this.roleId).subscribe(res => {
+      this.data = res
       console.log(this.data);
-    //   el.status
-      
-    // })
-   
-  })
-  
+    })
+  }
+  update(bookingId: number, e: Executivestatuschange) {
+    this.service.updatestatus(this.roleId, bookingId, e).subscribe(res => {
+      alert("Updated !!")
+    })
+  }
 }
- 
-update(bookingId:number,e:Executivestatuschange){
-  // if(e.status==="Cancelled"){
-  //   alert("cant update")
-  // }
- 
-  
-  // else{
-  
-  this.service.updatestatus(this.roleId,bookingId,e).subscribe(res=>{
-    alert("Updated !!")
-   
-    
-  })}
-}
-
-// }
-
-

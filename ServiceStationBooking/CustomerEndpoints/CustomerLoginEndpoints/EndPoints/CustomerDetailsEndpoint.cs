@@ -6,6 +6,7 @@ using Model;
 public class CustomerDetailsEnpoint : Endpoint<Customer>
 {
     private readonly ServiceContext _context;
+   
 
     public override void Configure()
     {
@@ -16,10 +17,13 @@ public class CustomerDetailsEnpoint : Endpoint<Customer>
     public CustomerDetailsEnpoint(ServiceContext context)
     {
         _context = context;
+        
     }
 
+   
     public override async Task HandleAsync(Customer customer, CancellationToken ct)
     {
+        
 
         _context.Customers.Add(customer);
         await _context.SaveChangesAsync();

@@ -9,46 +9,28 @@ import { Technicianstatuschange } from 'src/app/model/technicianstatuschange';
 })
 export class TechnicianstatusupdateComponent {
   name = ""
-  data:any
-  stat:any
-
-  POSTS:any;
-
-  page:number=1;
-
-  count:number=0;
-
-  tableSize:number=10;
-  
-  roleId=this.service.roleIdGetter()
-  customerId=this.service.customerIdGetter()
+  data: any
+  stat: any
+  POSTS: any;
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 10;
+  roleId = this.service.roleIdGetter()
+  customerId = this.service.customerIdGetter()
   constructor(private service: ApiService) { }
-  ex=Technicianstatuschange
-  onTableDataChange(event:any){
-
-    this.page=event;    
-
+  ex = Technicianstatuschange
+  onTableDataChange(event: any) {
+    this.page = event;
   }
-ngOnInit(){
-  this.service.changestatustechnician(this.roleId).subscribe(res=>{
-    this.data=res
-    console.log(this.data);
-    
-   
-   
-  })
-  
-}
- 
-update(customerId:number,e:Technicianstatuschange){
-  
-  
-  this.service.updatestatustechnician(this.roleId,customerId,e).subscribe(res=>{
-    alert("Updated !!")
-   
-    
-  })}
-
-
-
+  ngOnInit() {
+    this.service.changestatustechnician(this.roleId).subscribe(res => {
+      this.data = res
+      console.log(this.data);
+    })
+  }
+  update(bookingId: number, e: Technicianstatuschange) {
+    this.service.updatestatustechnician(this.roleId, bookingId, e).subscribe(res => {
+      alert("Updated !!")
+    })
+  }
 }

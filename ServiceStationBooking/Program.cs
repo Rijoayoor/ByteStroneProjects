@@ -5,6 +5,7 @@ using Model;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddFastEndpoints();
 builder.Services.AddDbContext<ServiceContext>();
+builder.Services.AddScoped<Booking>();
 // builder.Services.AddCors(options =>
 // {
 //     options.AddPolicy("AllowAll",

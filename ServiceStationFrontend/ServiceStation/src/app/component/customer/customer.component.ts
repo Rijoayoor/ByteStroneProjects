@@ -16,12 +16,10 @@ export class CustomerComponent {
   custumerOns = false
   bookingFormsOns = false
 
-
   constructor(private service: ApiService, private route: Router) { }
   ngOnInit() {
     this.name = this.service.nameGetter()
     this.role=this.service.roleGetter()
-
   }
   logout() {
     sessionStorage.removeItem("username");
@@ -32,21 +30,13 @@ export class CustomerComponent {
     if (this.bookingFormsOns) {
       this.bookingFormsOns = !this.bookingFormsOns
     }
-
-    // this.route.navigateByUrl("/customerhome")
   }
   bookingdetails() {
-    // this.route.navigateByUrl("/customerbooking")
     this.bookingFormsOns = !this.bookingFormsOns
     if (this.custumerOns) {
       this.custumerOns = !this.custumerOns
     }
   }
-
-
-
-
-
 }
 
 

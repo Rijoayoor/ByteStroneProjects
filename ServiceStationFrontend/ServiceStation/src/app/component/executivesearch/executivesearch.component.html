@@ -1,8 +1,3 @@
-<!-- search.component.html -->
-
-<!-- <div class="searchform">
-
-  <div class="searchbox"> -->
     <div class="registration-form">
     <div class="row">
       <input type="text" [(ngModel)]="searchCriteria1" placeholder="Name">
@@ -17,9 +12,6 @@
       <button (click)="setSearch()">Search</button>
     </div>
   </div>
-<!-- </div> -->
-
-  
   <div class="content" *ngIf="viewSearchResult" >
     <br>
     <br>
@@ -38,12 +30,8 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of searchValue | paginate:{itemsPerPage:tableSize,
-
                 currentPage:page,
-    
             totalItems:count}; let i=index">
-            <!-- <ng-container *ngFor="let item of searchValue">
-            <tr *ngIf="item.vehicleModel==='car'"> -->
                 <td>{{ (page - 1) * tableSize + i + 1 }}</td>
                 <td>{{ item.customerName }}</td>
                 <td>{{item.email}}</td>
@@ -53,15 +41,9 @@
                 <td>{{ item.serviceRequirements }}</td>
                 <td>{{item.status}}</td>
             </tr>
-        <!-- </ng-container> -->
-
         </tbody>
-    </table><br>
-    
-    
+    </table><br>  
   </div>
-
   <pagination-controls *ngIf="viewSearchResult" previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
-
   </pagination-controls>
 
