@@ -1,6 +1,6 @@
 using System.Threading;
 using System.Threading.Tasks;
-using Model;
+using service.Core.Customers;
 using service.Core.Interfaces;
 
 

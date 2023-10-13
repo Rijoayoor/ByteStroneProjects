@@ -4283,15 +4283,15 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\src\\service.Infrastructure\\service.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\src\\service.Infrastructure\\service.Infrastructure.csproj",
       "projectName": "service.Infrastructure",
-      "projectPath": "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\src\\service.Infrastructure\\service.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\src\\service.Infrastructure\\service.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\RijoThomas(Intern)\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\src\\service.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\src\\service.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "configFilePaths": [
-        "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\NuGet.Config",
+        "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\NuGet.Config",
         "C:\\Users\\RijoThomas(Intern)\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
@@ -4304,11 +4304,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\src\\service.Core\\service.Core.csproj": {
-              "projectPath": "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\src\\service.Core\\service.Core.csproj"
+            "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\src\\service.Core\\service.Core.csproj": {
+              "projectPath": "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\src\\service.Core\\service.Core.csproj"
             },
-            "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\src\\service.SharedKernel\\service.SharedKernel.csproj": {
-              "projectPath": "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\src\\service.SharedKernel\\service.SharedKernel.csproj"
+            "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\src\\service.SharedKernel\\service.SharedKernel.csproj": {
+              "projectPath": "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\src\\service.SharedKernel\\service.SharedKernel.csproj"
             }
           }
         }

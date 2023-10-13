@@ -6,25 +6,25 @@ namespace service.web.Endpoints.CustomerEndpoints;
 
 public class CustomerDetailsRequest
 {
-     public int Id { get; set; }
+    public int Id { get; set; }
 
-    public string CustomerName { get; set; } = null!;
+    public string CustomerName { get; set; } = string.Empty;
 
-    public string ContactNumber { get; set; } = null!;
+    public string ContactNumber { get; set; } = string.Empty;
 
-    public string? Email { get; set; }
+    public string Email { get; set; } = string.Empty;
 
-    public string? Address { get; set; }
+    public string Address { get; set; } = string.Empty;
 
-    public string VehicleNumber { get; set; } = null!;
+    public string VehicleNumber { get; set; } = string.Empty;
 
-    public string VehicleModel { get; set; } = null!;
+    public string VehicleModel { get; set; } = string.Empty;
 
-    public string ServiceRequirements { get; set; } = null!;
+    public string ServiceRequirements { get; set; } = string.Empty;
 
     public int CustomerId { get; set; }
 
-    public int? BookingId { get; set; }
+    public int BookingId { get; set; }
 }
 
 

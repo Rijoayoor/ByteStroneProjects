@@ -10,3 +10,15 @@ C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.SharedKerne
 C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.SharedKernel\obj\Debug\net7.0\refint\service.SharedKernel.dll
 C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.SharedKernel\obj\Debug\net7.0\service.SharedKernel.pdb
 C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.SharedKernel\obj\Debug\net7.0\ref\service.SharedKernel.dll
+C:\Users\RijoThomas(Intern)\workspace\Assessment3\rijo-thomas\service\src\service.SharedKernel\bin\Debug\net7.0\service.SharedKernel.deps.json
+C:\Users\RijoThomas(Intern)\workspace\Assessment3\rijo-thomas\service\src\service.SharedKernel\bin\Debug\net7.0\service.SharedKernel.dll
+C:\Users\RijoThomas(Intern)\workspace\Assessment3\rijo-thomas\service\src\service.SharedKernel\bin\Debug\net7.0\service.SharedKernel.pdb
+C:\Users\RijoThomas(Intern)\workspace\Assessment3\rijo-thomas\service\src\service.SharedKernel\obj\Debug\net7.0\service.SharedKernel.csproj.AssemblyReference.cache
+C:\Users\RijoThomas(Intern)\workspace\Assessment3\rijo-thomas\service\src\service.SharedKernel\obj\Debug\net7.0\service.SharedKernel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RijoThomas(Intern)\workspace\Assessment3\rijo-thomas\service\src\service.SharedKernel\obj\Debug\net7.0\service.SharedKernel.AssemblyInfoInputs.cache
+C:\Users\RijoThomas(Intern)\workspace\Assessment3\rijo-thomas\service\src\service.SharedKernel\obj\Debug\net7.0\service.SharedKernel.AssemblyInfo.cs
+C:\Users\RijoThomas(Intern)\workspace\Assessment3\rijo-thomas\service\src\service.SharedKernel\obj\Debug\net7.0\service.SharedKernel.csproj.CoreCompileInputs.cache
+C:\Users\RijoThomas(Intern)\workspace\Assessment3\rijo-thomas\service\src\service.SharedKernel\obj\Debug\net7.0\service.SharedKernel.dll
+C:\Users\RijoThomas(Intern)\workspace\Assessment3\rijo-thomas\service\src\service.SharedKernel\obj\Debug\net7.0\refint\service.SharedKernel.dll
+C:\Users\RijoThomas(Intern)\workspace\Assessment3\rijo-thomas\service\src\service.SharedKernel\obj\Debug\net7.0\service.SharedKernel.pdb
+C:\Users\RijoThomas(Intern)\workspace\Assessment3\rijo-thomas\service\src\service.SharedKernel\obj\Debug\net7.0\ref\service.SharedKernel.dll

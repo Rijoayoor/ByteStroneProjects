@@ -17,3 +17,6 @@ C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Infrastruct
 C:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Infrastructure\obj\Debug\net7.0\service.Infrastructure.pdb
 c:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Infrastructure\obj\Debug\net7.0\service.Infrastructure.genruntimeconfig.cache
 c:\Users\RijoThomas(Intern)\workspace\New folder\service\src\service.Infrastructure\obj\Debug\net7.0\ref\service.Infrastructure.dll
+C:\Users\RijoThomas(Intern)\workspace\Assessment3\rijo-thomas\service\src\service.Infrastructure\obj\Debug\net7.0\service.Infrastructure.dll
+C:\Users\RijoThomas(Intern)\workspace\Assessment3\rijo-thomas\service\src\service.Infrastructure\obj\Debug\net7.0\refint\service.Infrastructure.dll
+C:\Users\RijoThomas(Intern)\workspace\Assessment3\rijo-thomas\service\src\service.Infrastructure\obj\Debug\net7.0\service.Infrastructure.pdb

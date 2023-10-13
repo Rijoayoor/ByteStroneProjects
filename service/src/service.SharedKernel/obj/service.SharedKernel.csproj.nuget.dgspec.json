@@ -1,21 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\src\\service.SharedKernel\\service.SharedKernel.csproj": {}
+    "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\src\\service.SharedKernel\\service.SharedKernel.csproj": {}
   },
   "projects": {
-    "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\src\\service.SharedKernel\\service.SharedKernel.csproj": {
+    "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\src\\service.SharedKernel\\service.SharedKernel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\src\\service.SharedKernel\\service.SharedKernel.csproj",
+        "projectUniqueName": "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\src\\service.SharedKernel\\service.SharedKernel.csproj",
         "projectName": "service.SharedKernel",
-        "projectPath": "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\src\\service.SharedKernel\\service.SharedKernel.csproj",
+        "projectPath": "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\src\\service.SharedKernel\\service.SharedKernel.csproj",
         "packagesPath": "C:\\Users\\RijoThomas(Intern)\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\src\\service.SharedKernel\\obj\\",
+        "outputPath": "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\src\\service.SharedKernel\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\NuGet.Config",
+          "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\NuGet.Config",
           "C:\\Users\\RijoThomas(Intern)\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [

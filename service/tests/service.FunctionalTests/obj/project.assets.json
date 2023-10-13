@@ -12177,15 +12177,15 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\tests\\service.FunctionalTests\\service.FunctionalTests.csproj",
+      "projectUniqueName": "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\tests\\service.FunctionalTests\\service.FunctionalTests.csproj",
       "projectName": "service.FunctionalTests",
-      "projectPath": "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\tests\\service.FunctionalTests\\service.FunctionalTests.csproj",
+      "projectPath": "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\tests\\service.FunctionalTests\\service.FunctionalTests.csproj",
       "packagesPath": "C:\\Users\\RijoThomas(Intern)\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\tests\\service.FunctionalTests\\obj\\",
+      "outputPath": "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\tests\\service.FunctionalTests\\obj\\",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "configFilePaths": [
-        "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\NuGet.Config",
+        "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\NuGet.Config",
         "C:\\Users\\RijoThomas(Intern)\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
@@ -12198,11 +12198,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\src\\service.Web\\service.Web.csproj": {
-              "projectPath": "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\src\\service.Web\\service.Web.csproj"
+            "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\src\\service.Web\\service.Web.csproj": {
+              "projectPath": "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\src\\service.Web\\service.Web.csproj"
             },
-            "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\tests\\service.UnitTests\\service.UnitTests.csproj": {
-              "projectPath": "c:\\Users\\RijoThomas(Intern)\\workspace\\New folder\\service\\tests\\service.UnitTests\\service.UnitTests.csproj"
+            "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\tests\\service.UnitTests\\service.UnitTests.csproj": {
+              "projectPath": "C:\\Users\\RijoThomas(Intern)\\workspace\\Assessment3\\rijo-thomas\\service\\tests\\service.UnitTests\\service.UnitTests.csproj"
             }
           }
         }
