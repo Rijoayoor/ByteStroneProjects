@@ -24,12 +24,7 @@ public class CustomerUpdateEnpoint : Endpoint<Customer>
         {
             await SendNotFoundAsync();
         }
-        // customer.CustomerName = req.CustomerName;
-        // customer.ContactNumber = req.ContactNumber;
-        // customer.Email = req.Email;
-        // customer.Address = req.Address;
-        // customer.VehicleNumber = req.VehicleNumber;
-        // customer.VehicleModel = req.VehicleModel;
+
         customer.ServiceRequirements = req.ServiceRequirements;
 
         await _context.SaveChangesAsync();
