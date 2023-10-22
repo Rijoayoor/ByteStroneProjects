@@ -13,8 +13,6 @@ public static class CountTechnicianJob
             technician.Count=count;
             _context.SaveChanges();
         }
-
-
     }
 
 }

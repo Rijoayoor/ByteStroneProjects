@@ -31,7 +31,6 @@ export class CustomerhomeComponent {
   customerId = this.service.roleIdGetter()
   customerDetails: FormGroup;
 
-
   constructor(private service: ApiService, private route: Router) {
     this.customerDetails = new FormGroup({
       customerName: new FormControl('', [Validators.required]),
@@ -43,7 +42,6 @@ export class CustomerhomeComponent {
       serviceRequirements: new FormControl('', [Validators.required]),
       bookingDate: new FormControl('', [Validators.required])
     });
-
   }
   minDate: any;
   ngOnInit() {
@@ -63,10 +61,8 @@ export class CustomerhomeComponent {
     this.serviceRequirements = this.customerDetails.get('serviceRequirements')?.value;
     this.bookingDate = this.customerDetails.get('bookingDate')?.value;
 
-
     let customer: Customer = new Customer();
     let booking: Booking = new Booking();
-
     customer.customerName = this.customerName,
       customer.contactNumber = this.contactNumber,
       customer.email = this.email,

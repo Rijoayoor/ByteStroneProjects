@@ -6,7 +6,7 @@ using Model;
 public class CustomerDetailsEnpoint : Endpoint<Customer>
 {
     private readonly ServiceContext _context;
-   
+
 
     public override void Configure()
     {
@@ -17,13 +17,13 @@ public class CustomerDetailsEnpoint : Endpoint<Customer>
     public CustomerDetailsEnpoint(ServiceContext context)
     {
         _context = context;
-        
+
     }
 
-   
+
     public override async Task HandleAsync(Customer customer, CancellationToken ct)
     {
-        
+
 
         _context.Customers.Add(customer);
         await _context.SaveChangesAsync();
@@ -45,17 +45,7 @@ public class CustomerValidator : Validator<Customer>
             .WithMessage("Contact number is required!")
             .Matches(@"^[0-9]+$")
             .WithMessage("contact number must contain only digits");
-        // RuleFor(x => x.Email)
-        //     .NotEmpty()
-        //     .WithMessage("Email id is required!")
-        //     .EmailAddress()
-        //     .WithMessage("Invalid Email address");
-        // RuleFor(x => x.VehicleNumber)
-        //     .NotEmpty()
-        //     .WithMessage("Vehicle number is required!");
-        // RuleFor(x => x.VehicleModel)
-        //     .NotEmpty()
-        //     .WithMessage("Vehicle model is required!");
+
         RuleFor(x => x.ServiceRequirements)
              .NotEmpty()
              .WithMessage("Service requirement is required!");

@@ -8,14 +8,14 @@ import { Customerviewbooking } from 'src/app/model/customerviewbooking';
   styleUrls: ['./customerviewbooking.component.css']
 })
 export class CustomerviewbookingComponent {
-  data:any
-  roleId=this.service.roleIdGetter()
+  data: any
+  roleId = this.service.roleIdGetter()
   constructor(private service: ApiService) { }
-  ngOnInit(){
+  ngOnInit() {
     console.log(this.roleId);
-    this.service.viewbookingcustomer(this.roleId).subscribe(res=>{
-      this.data=res
+    this.service.viewbookingcustomer(this.roleId).subscribe(res => {
+      this.data = res
       console.log(this.data);
-  })
-}
+    })
+  }
 }

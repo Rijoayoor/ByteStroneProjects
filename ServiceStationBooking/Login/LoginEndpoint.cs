@@ -21,15 +21,10 @@ public class LoginEndpoint : Endpoint<Login>
             u.Username == log.Username && u.Password == log.Password && u.Userrole == log.Userrole);
         if (user != null)
         {
-            // User credentials are valid
-            // await SendAsync("Login successful");
-            // await SendAsync(log.Username);
-            // await SendAsync(log.Name);
             await SendAsync(user);
         }
         else
-        { 
-            // User credentials are invalid
+        {
             await SendAsync(null);
         }
     }

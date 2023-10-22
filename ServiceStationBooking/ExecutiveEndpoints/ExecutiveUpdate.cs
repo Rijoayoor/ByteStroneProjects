@@ -16,19 +16,14 @@ public class ExecutiveUpdateEnpoint : Endpoint<Booking>
     }
     public override async Task HandleAsync(Booking req, CancellationToken ct)
     {
-
-
         var executiveId = Route<int>("executiveId");
         var bookingId = Route<int>("bookingid");
-
         var booking = _context.Bookings.FirstOrDefault(s => s.BookingId == bookingId && s.ExecutiveId == executiveId);
-
         if (booking == null)
         {
             await SendNotFoundAsync();
             return;
         }
-
         var executives = _context.ServiceExecutives.ToList();
         var sortedExecutives = executives.OrderBy(e => e.Count);
         var selectedExecutives = sortedExecutives.First();

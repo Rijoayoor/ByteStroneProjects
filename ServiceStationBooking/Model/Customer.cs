@@ -24,6 +24,5 @@ public partial class Customer
     public int CustomerId { get; set; }
 
     public int? BookingId { get; set; }
-
     public virtual Booking? Booking { get; set; }
 }

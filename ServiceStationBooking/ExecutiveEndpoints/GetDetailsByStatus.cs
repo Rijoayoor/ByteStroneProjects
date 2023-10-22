@@ -34,7 +34,6 @@ public class GetDetailsByStatusEndpoint : EndpointWithoutRequest<dynamic[]>
                       {
                           booking.BookingId,
                           booking.BookingDate,
-                        //   booking.CustomerId,
                           customer.ContactNumber,
                           customer.ServiceRequirements,
                           customer.CustomerName,

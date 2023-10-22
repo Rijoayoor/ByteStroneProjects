@@ -1,6 +1,6 @@
 <div class="nav">
     <h1 class="brand">Hi, <span class="capitalize">{{name}}</span></h1>
-    <h1 class="brand margin-left"><span class="capitalize">{{role}}</span></h1>   
+    <h1 class="brand margin-left"><span class="capitalize">{{role}}</span></h1>
 </div>
 <div class="main">
     <div class="side-nav">
@@ -12,7 +12,7 @@
         <button class="log-out" (click)="logout()">LOGOUT</button>
     </div>
     <div class="content" *ngIf="viewBookingOn">
-        <br><br><br><br><br><br><br>  
+        <br><br><br><br><br><br><br>
         <app-executiveviewbooking></app-executiveviewbooking>
     </div>
     <div class="content" *ngIf="changeStatus">

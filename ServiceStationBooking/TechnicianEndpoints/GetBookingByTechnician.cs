@@ -45,7 +45,6 @@ public class GetBookingTechnicianEndpoint : EndpointWithoutRequest<dynamic[]>
                           booking.CompletionDate
                       }).ToArray();
         if (result.Length == 0)
-            // if (result == null)
             await SendNotFoundAsync();
         else
             await SendAsync(result);

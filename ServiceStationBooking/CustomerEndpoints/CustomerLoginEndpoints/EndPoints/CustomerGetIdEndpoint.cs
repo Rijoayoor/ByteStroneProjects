@@ -16,7 +16,6 @@ public class CustomerGetIdEndpoint : EndpointWithoutRequest<dynamic[]>
     public override async Task HandleAsync(CancellationToken ct)
     {
         var id = Route<int>("id");
-        // var customer = _context.Customers.Where(s => s.CustomerId == id).FirstOrDefault();
         var result =
         (from booking in _context.Bookings
          join customer in _context.Customers

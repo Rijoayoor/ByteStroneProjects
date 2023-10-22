@@ -17,8 +17,6 @@ public class TechnicianUpdateEnpoint : Endpoint<Booking>
     }
     public override async Task HandleAsync(Booking req, CancellationToken ct)
     {
-
-
         var technicianId = Route<int>("technicianId");
         var bookingId = Route<int>("bookingId");
 
@@ -29,13 +27,12 @@ public class TechnicianUpdateEnpoint : Endpoint<Booking>
             await SendNotFoundAsync();
             return;
         }
-
         var technicians = _context.ServiceTechnicians.ToList();
         var sortedTechnicians = technicians.OrderBy(e => e.Count);
         var selectedTechnicians = sortedTechnicians.First();
         // booking.TechnicianId = selectedTechnicians.TechnicianId;
         booking.Status = req.Status;
-        booking.CompletionDate=req.CompletionDate;
+        booking.CompletionDate = req.CompletionDate;
 
         await _context.SaveChangesAsync();
         CountTechnicianJob.updatecounttechnician(selectedTechnicians.TechnicianId, _context);

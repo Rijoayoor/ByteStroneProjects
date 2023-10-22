@@ -8,14 +8,8 @@ table {
   thead {
     background-color: #38e850;
   }
-  thead th {
-    padding: 10px;
-    font-weight: bold;
-    text-align:center;
-    background-color: #87f195;
-    border: 2px solid #343232;
-  }
-  tbody tr:nth-child(even) {
+ 
+   tbody tr:nth-child(even) {
     background-color: #f9f9f9;
   }
   
@@ -65,7 +59,7 @@ table {
  */
 
 
- /* Custom CSS for the table */
+/* Custom CSS for the table */
 /* .container {
   margin: 20px auto;
 }
@@ -179,5 +173,3 @@ table {
   background-color: #0d65bd;
   border-bottom: 2px solid #dee2e6;
 }
-
-

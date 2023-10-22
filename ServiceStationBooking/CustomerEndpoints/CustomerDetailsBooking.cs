@@ -188,7 +188,7 @@
 
 //             Booking booking = new Booking
 //             {
-                
+
 //                 ServiceId = bookingData.ServiceId,
 //                 BookingDate = bookingData.BookingDate
 //             };
@@ -221,32 +221,32 @@
 
 // executive search
 // name="";
-        // Console.WriteLine($"hi {email}");
-        // var result = (from booking in _context.Bookings
-        //               join customer in _context.Customers
-        //               on booking.CustomerId equals customer.CustomerId
-        //               where (booking.BookingDate == convertedDate
-        //               || customer.CustomerName.Contains(name)
-        //               || customer.Email.Contains(email)
-        //               || customer.VehicleModel.Contains(vehiclemodel)
-        //               || customer.ServiceRequirements.Contains(requirement))
-        //               || booking.ExecutiveId == executiveid
-        //               select new
-        //               {
-        //                   booking.BookingId,
-        //                   customer.CustomerId,
-        //                   customer.CustomerName,
-        //                   customer.Email,
-        //                   customer.VehicleModel,
-        //                   booking.BookingDate,
-        //                   customer.ServiceRequirements,
-        //                   customer.ContactNumber,
-        //                   booking.Status
-        //               }).ToArray();
-        // await SendNotFoundAsync();
-            // System.Console.WriteLine("Hai Here");
+//         Console.WriteLine($"hi {email}");
+//         var result = (from booking in _context.Bookings
+//                       join customer in _context.Customers
+//                       on booking.CustomerId equals customer.CustomerId
+//                       where (booking.BookingDate == convertedDate
+//                       || customer.CustomerName.Contains(name)
+//                       || customer.Email.Contains(email)
+//                       || customer.VehicleModel.Contains(vehiclemodel)
+//                       || customer.ServiceRequirements.Contains(requirement))
+//                       || booking.ExecutiveId == executiveid
+//                       select new
+//                       {
+//                           booking.BookingId,
+//                           customer.CustomerId,
+//                           customer.CustomerName,
+//                           customer.Email,
+//                           customer.VehicleModel,
+//                           booking.BookingDate,
+//                           customer.ServiceRequirements,
+//                           customer.ContactNumber,
+//                           booking.Status
+//                       }).ToArray();
+//         await SendNotFoundAsync();
+//             System.Console.WriteLine("Hai Here");
 
-            // using FastEndpoints;
+//             using FastEndpoints;
 // using Microsoft.EntityFrameworkCore;
 // using Model;
 
@@ -382,35 +382,35 @@
 
 
 // var executive = _context.Customers
-        // .Where(c => c.Bookings
-        // .Any(b => b.ExecutiveId == id))
-        // .Select(c => new {c.CustomerId, c.CustomerName, c.ContactNumber, c.ServiceRequirements })
-        // .ToArray();
-        // var executive=(from booking in _context.Bookings
-        // join customer in _context.Customers
-        // on booking.CustomerId)
+//         .Where(c => c.Bookings
+//         .Any(b => b.ExecutiveId == id))
+//         .Select(c => new {c.CustomerId, c.CustomerName, c.ContactNumber, c.ServiceRequirements })
+//         .ToArray();
+//         var executive=(from booking in _context.Bookings
+//         join customer in _context.Customers
+//         on booking.CustomerId)
 
 
 // var result = (from booking in _context.Bookings
-        //               join customer in _context.Customers
-        //               on booking.CustomerId equals customer.CustomerId
-        //               join ServiceTechnician in _context.ServiceTechnicians
-        //               on booking.TechnicianId equals ServiceTechnician.TechnicianId
-        //               where booking.ExecutiveId == executiveId
-        //                 &&
-        //                 (booking.Status == "new"
-        //                 || booking.Status == "In progress"
-        //                 // || booking.Status == "completed"
-        //                 // || booking.Status == "Cancelled"
-        //                 )
-        //               select new
-        //               {
-        //                   booking.BookingId,
-        //                   booking.BookingDate,
-        //                   booking.CustomerId,
-        //                   customer.ContactNumber,
-        //                   customer.ServiceRequirements,
-        //                   customer.CustomerName,
-        //                   ServiceTechnician.TechnicianName,
-        //                   booking.Status
-        //               }).ToArray();
+//                       join customer in _context.Customers
+//                       on booking.CustomerId equals customer.CustomerId
+//                       join ServiceTechnician in _context.ServiceTechnicians
+//                       on booking.TechnicianId equals ServiceTechnician.TechnicianId
+//                       where booking.ExecutiveId == executiveId
+//                         &&
+//                         (booking.Status == "new"
+//                         || booking.Status == "In progress"
+//                         // || booking.Status == "completed"
+//                         // || booking.Status == "Cancelled"
+//                         )
+//                       select new
+//                       {
+//                           booking.BookingId,
+//                           booking.BookingDate,
+//                           booking.CustomerId,
+//                           customer.ContactNumber,
+//                           customer.ServiceRequirements,
+//                           customer.CustomerName,
+//                           ServiceTechnician.TechnicianName,
+//                           booking.Status
+//                       }).ToArray();

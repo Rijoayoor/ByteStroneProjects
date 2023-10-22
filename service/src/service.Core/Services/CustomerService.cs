@@ -5,19 +5,19 @@ using service.Core.Interfaces;
 
 namespace service.Core.Services;
 
-    public class CustomerService : ICustomerService
+public class CustomerService : ICustomerService
+{
+    private readonly ServiceContext _context;
+
+    public CustomerService(ServiceContext context)
     {
-        private readonly ServiceContext _context;
+        _context = context;
+    }
 
-        public CustomerService(ServiceContext context)
-        {
-            _context = context;
-        }
+    public async Task GetCustomerDetails()
+    {
+        var customerDetails = await _context.Customers.ToArray();
+        return customerDetails;
+    }
 
-        public async Task GetCustomerDetails()
-        {
-            var customerDetails = await _context.Customers.ToArray();
-            return customerDetails;
-        }
-        
-        }
+}

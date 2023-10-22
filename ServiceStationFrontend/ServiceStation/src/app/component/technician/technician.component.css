@@ -1,133 +1,137 @@
 .nav {
-    width: 100vw;
-    height: 10vh;
-    background-color: rgb(17,17,17);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0.8;
-    
+  width: 100vw;
+  height: 10vh;
+  background-color: rgb(17, 17, 17);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.8;
+
 }
 
 .log-out {
-    background-color: white;
-    color: black;
-    margin-right: 3%;
-    width: 5.5rem;
-    height: 2rem;
-    background-color: white;
-    border-radius: .8rem;
-    transition: all .5s ease-in-out;
-    font-weight: 600;
-
+  background-color: white;
+  color: black;
+  margin-right: 3%;
+  width: 5.5rem;
+  height: 2rem;
+  background-color: white;
+  border-radius: .8rem;
+  transition: all .5s ease-in-out;
+  font-weight: 600;
 }
 
 .log-out:hover {
-    width: 6rem;
-    height: 2.5rem;
-    font-weight: 800;
-    font-size: 1rem;
-    cursor: pointer;
+  width: 6rem;
+  height: 2.5rem;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .nav>h1,
 h3 {
-    color: white;
-    margin-left: 3%;
+  color: white;
+  margin-left: 3%;
 
 }
 
 .brand {
-    font-size: 2em;
+  font-size: 2em;
 
 }
 
 .side-nav {
-    width: 30vw;
-    height: 83vh;
-    background-color:transparent;
- 
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-start;
-    align-items:start;
-    position: fixed; /* Keeps the side nav fixed */
-    top: 0; /* Position at the top */
-    left: 0; /* Position at the left */
-    padding-top: 50px; /* Add some padding at the top */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  width: 30vw;
+  height: 83vh;
+  background-color: transparent;
 
-
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  position: fixed;
+  /* Keeps the side nav fixed */
+  top: 0;
+  /* Position at the top */
+  left: 0;
+  /* Position at the left */
+  padding-top: 50px;
+  /* Add some padding at the top */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .side-nav>button {
-    padding: 10px;
-    cursor: pointer;
-    width: 50%;
-    height: 10%;
-    border-radius: .7rem;
-    font-weight: 700;
-    font-size: 1.4rem;
-    transition: all .4s ease;
-    background-color: rgb(206, 227, 166);
+  padding: 10px;
+  cursor: pointer;
+  width: 50%;
+  height: 10%;
+  border-radius: .7rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  transition: all .4s ease;
+  background-color: rgb(206, 227, 166);
 
 }
+
 .side-nav button:first-child {
-    margin-top: 30px; /* Add more space above the first button */
-  }
-  .side-nav button:nth-child(2) {
-    margin-top: 30px; /* Add more space above the first button */
-  }
-  .side-nav button:last-child {
-    margin-top: 30px; /* Add more space below the last button */
-  }
+  margin-top: 30px;
+  /* Add more space above the first button */
+}
+
+.side-nav button:nth-child(2) {
+  margin-top: 30px;
+  /* Add more space above the first button */
+}
+
+.side-nav button:last-child {
+  margin-top: 30px;
+  /* Add more space below the last button */
+}
 
 .side-nav>button:hover {
-    width: 65%;
-    height: 11%;
+  width: 65%;
+  height: 11%;
 
 }
 
 .main {
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: end
+
+  display: flex;
+  justify-content: space-between;
+  align-items: end
 }
 
 
 .error {
-    color: red;
+  color: red;
 }
 
 .form-section {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .form-section label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .form-section input[type="text"],
 .form-section input[type="tel"],
 .form-section input[type="email"],
 .form-section textarea {
-    width: 300px;
+  width: 300px;
 }
-
-
-
 
 .container {
 
-    display: flex;
+  display: flex;
 
-    justify-content: center;
+  justify-content: center;
 
-    align-items: center;
+  align-items: center;
 
-    height: 100vh;
+  height: 100vh;
 
 }
 
@@ -136,171 +140,152 @@ h3 {
 
 .registration-form {
 
-    width: 400px;
+  width: 400px;
 
-    padding: 20px;
+  padding: 20px;
 
-    border: 1px solid #ccc;
+  border: 1px solid #ccc;
 
-    border-radius: 5px;
+  border-radius: 5px;
 
 }
-
-
-
 
 .registration-form h2 {
 
-    text-align: center;
+  text-align: center;
 
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 
 }
-
-
-
 
 .registration-form .form-group label {
 
-    display: block;
+  display: block;
 
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 
 }
-
-
-
 
 .registration-form .form-group input {
 
-    width: 100%;
+  width: 100%;
 
-    padding: 10px;
+  padding: 10px;
 
-    border-radius: 5px;
+  border-radius: 5px;
 
-    border: 1px solid #ccc;
+  border: 1px solid #ccc;
 
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 
 }
-
-
-
 
 .registration-form button[type="submit"] {
 
-    width: 100%;
+  width: 100%;
 
-    padding: 10px;
+  padding: 10px;
 
-    background-color: #4CAF50;
+  background-color: #4CAF50;
 
-    color: #fff;
+  color: #fff;
 
-    border: none;
+  border: none;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    border-radius: 5px;
+  border-radius: 5px;
 
 }
-
-
-
 
 .registration-form button[type="submit"]:hover {
 
-    background-color: #45a049;
+  background-color: #45a049;
 
 }
 
+form {
+  width: 400px;
+  margin: 0 auto;
+}
+
+div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
 
 form {
-    width: 400px;
-    margin: 0 auto;
-  }
-  
-  div {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  input[type="text"],
-  input[type="email"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #45a049;
-  }
-  form{
-  
-  }
+  width: 400px;
+  margin: 0 auto;
+}
 
+div {
+  margin-bottom: 15px;
+}
 
-form {
-    width: 400px;
-    margin: 0 auto;
-  }
-  
-  div {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  input[type="text"],
-  input[type="email"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #45a049;
-  }
-  .content{
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    width: 100vw;
-    height: 80vh;
-  }
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
 
-  .capitalize{
-    text-transform: uppercase;
-  }
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 80vh;
+}
+
+.capitalize {
+  text-transform: uppercase;
+}

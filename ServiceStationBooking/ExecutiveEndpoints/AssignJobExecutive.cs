@@ -41,8 +41,6 @@ public class AssignJobEnpoint : Endpoint<Booking>
 
         await _context.SaveChangesAsync();
         CountTechnicianJob.updatecounttechnician(selectedTechnicians.TechnicianId, _context);
-
-
         await SendAsync(booking);
     }
 }

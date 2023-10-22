@@ -81,13 +81,11 @@ public class SearchDetailsEndpoint : EndpointWithoutRequest<dynamic[]>
 
         if (result.Length == 0)
         {
-
             await SendAsync(null);
         }
         else
         {
             await SendAsync(result);
-
         }
     }
 }
